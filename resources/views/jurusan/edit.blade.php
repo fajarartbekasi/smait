@@ -14,9 +14,10 @@
                         <h5 class="font-weight bold">Perhatian!!!</h5>
                         <h5>Silahkan masukan jurusan dengan benar dan tepat.</h5>
                     </div>
-                    <form action="{{route('simpan-data.jurusan')}}" method="post">
+                    <form action="{{route('update.jurusan', $jurusan->id)}}" method="post">
 
                         @csrf
+                        @method('PATCH')
                         @if(session('success'))
                             <div class="alert alert-success">
                                 {{ session('success')}}
@@ -26,13 +27,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Kode Jurusan</label>
-                                    <input type="text" name="kd_jurusan" id="" class="form-control">
+                                    <input type="text" name="kd_jurusan" id="" value="{{$jurusan->kd_jurusan}}" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Nama Jurusan</label>
-                                    <input type="text" name="nama" id="" class="form-control">
+                                    <input type="text" name="nama" id="" value="{{$jurusan->nama}}" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-4">

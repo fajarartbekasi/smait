@@ -12,7 +12,11 @@
                     <div class="mt-3 mb-3">
                         <a href="{{route('jurusan.create')}}" class="btn btn-info">Tambah jurusan baru</a>
                     </div>
-
+                     @if(session('success'))
+                        <div class="alert alert-danger">
+                            {{ session('success')}}
+                        </div>
+                    @endif
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
@@ -23,16 +27,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>AK</td>
-                                    <td>AKUTANSI</td>
-                                    <td>
-                                        <form action="" method="post">
-                                            <a href="http://" class="btn btn-warning btn-sm">Edit</a>
-                                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                @forelse($jurusans as $jurusan)
+                                    <tr>
+                                        <td>{{$jurusan->kd_jurusan}}</td>
+                                        <td>{{$jurusan->nama}}</td>
+                                        <td>
+                                            <form action="{{route('destroy.jurusan', $jurusan->id)}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="{{route('ambil-form-edit.jurusan', $jurusan->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="3" class="text-center">
+                                            Maaf untuk sementara jurusan belum tersedia.
+                                        </td>
+                                    </tr>
+
+                                @endforelse
                             </tbody>
                         </table>
                     </div>

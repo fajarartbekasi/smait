@@ -60,6 +60,7 @@ Route::group(['prefix'=>'walikelas'], function(){
 Route::group(['prefix' => 'simpan-data'], function(){
     route::post('mapel','MapelController@store')->name('simpan-data.mapel');
     route::post('kelas','RuangkelasController@store')->name('simpan-data.kelas');
+    route::post('jurusan','JurusanController@store')->name('simpan-data.jurusan');
 });
 
 /**
@@ -69,6 +70,7 @@ Route::group(['prefix' => 'simpan-data'], function(){
 Route::group(['[prefix' => 'ambil-form-edit'], function(){
     route::get('mapel/{mapel}', 'MapelController@edit')->name('ambil-form-edit.mapel');
     route::get('kelas/{ruang}', 'RuangkelasController@edit')->name('ambil-form-edit.kelas');
+    route::get('jurusan/{jurusan}', 'JurusanController@edit')->name('ambil-form-edit.jurusan');
 });
 
 /**
@@ -77,7 +79,7 @@ Route::group(['[prefix' => 'ambil-form-edit'], function(){
  */
 Route::group(['prefix' => 'update'], function(){
     route::patch('mapel/{mapel}', 'MapelController@update')->name('update.mapel');
-    route::patch('kelas/{ruang}', 'RuangkelasController@update')->name('update.kelas');
+    route::patch('jurusan/{jurusan}', 'JurusanController@update')->name('update.jurusan');
 });
 
 /**
@@ -86,5 +88,6 @@ Route::group(['prefix' => 'update'], function(){
  */
 Route::group(['prefix'=>'destroy'], function(){
     route::delete('mapel/{mapel}','MapelController@destroy')->name('destroy.mapel');
-    route::delete('kelas/{mapel}','RuangkelasController@destroy')->name('destroy.kelas');
+    route::delete('kelas/{ruang}','RuangkelasController@destroy')->name('destroy.kelas');
+    route::delete('jurusan/{jurusan}','JurusanController@destroy')->name('destroy.jurusan');
 });
