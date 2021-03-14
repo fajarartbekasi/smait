@@ -11,6 +11,11 @@
                     <div class="mt-3 mb-3">
                         <a href="{{route('kelas.create')}}" class="btn btn-info">Tambah kelas</a>
                     </div>
+                    @if(session('success'))
+                        <div class="alert alert-danger">
+                            {{ session('success')}}
+                        </div>
+                    @endif
                     <div class="table responsive">
                         <table class="table table-striped">
                             <thead>
@@ -22,16 +27,26 @@
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <td>LAB</td>
-                                    <td>LAB TKJ</td>
-                                    <td>
-                                        <form action="">
-                                            <a href="http://" class="btn btn-outline-warning btn-sm">Edit</a>
-                                            <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                @forelse($ruangs as $ruang)
+                                    <tr>
+                                        <td>{{$ruang->kd_ruang}}</td>
+                                        <td>{{$ruang->nama}}</td>
+                                        <td>
+                                            <form action="{{route('destroy.kelas', $ruang->id)}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="{{route('ambil-form-edit.kelas', $ruang->id)}}" class="btn btn-outline-warning btn-sm">Edit</a>
+                                                <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="3" class="text-center">
+                                            Maaf data ruang untuk saat ini belum tersedia.
+                                        </td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>

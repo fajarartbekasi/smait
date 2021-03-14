@@ -53,19 +53,38 @@ Route::group(['prefix'=>'walikelas'], function(){
     route::get('/', 'WalasController@index')->name('walikelas');
 });
 
-
+/**
+ * pengelompokan route
+ * untuk function store
+ */
 Route::group(['prefix' => 'simpan-data'], function(){
     route::post('mapel','MapelController@store')->name('simpan-data.mapel');
+    route::post('kelas','RuangkelasController@store')->name('simpan-data.kelas');
 });
 
+/**
+ * pengelompokan route
+ * untuk function edit
+ */
 Route::group(['[prefix' => 'ambil-form-edit'], function(){
-    route::get('mapel/{mapel}', 'MapelController@edit')->name('ambil-form-edit.edit');
+    route::get('mapel/{mapel}', 'MapelController@edit')->name('ambil-form-edit.mapel');
+    route::get('kelas/{ruang}', 'RuangkelasController@edit')->name('ambil-form-edit.kelas');
 });
 
+/**
+ * pengelompokan route
+ * untuk function update
+ */
 Route::group(['prefix' => 'update'], function(){
     route::patch('mapel/{mapel}', 'MapelController@update')->name('update.mapel');
+    route::patch('kelas/{ruang}', 'RuangkelasController@update')->name('update.kelas');
 });
 
+/**
+ * pengelompokan route
+ * untuk function delete
+ */
 Route::group(['prefix'=>'destroy'], function(){
     route::delete('mapel/{mapel}','MapelController@destroy')->name('destroy.mapel');
+    route::delete('kelas/{mapel}','RuangkelasController@destroy')->name('destroy.kelas');
 });

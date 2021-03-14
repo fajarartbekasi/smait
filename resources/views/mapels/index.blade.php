@@ -12,7 +12,7 @@
                         <a href="{{route('mapel.create')}}" class="btn btn-info">Tambah Mapel</a>
                     </div>
                     @if(session('success'))
-                            <div class="alert alert-success">
+                            <div class="alert alert-danger">
                                 {{ session('success')}}
                             </div>
                         @endif
@@ -35,7 +35,7 @@
 
                                             @csrf
                                             @method('DELETE')
-                                            <a href="{{route('ambil-form-edit.edit', $mapel->id)}}" class="btn btn-outline-warning btn-sm">edit</a>
+                                            <a href="{{route('ambil-form-edit.mapel', $mapel->id)}}" class="btn btn-outline-warning btn-sm">edit</a>
                                             <button class="btn btn-outline-danger btn-sm">Hapus</button>
                                         </form>
                                     </td>

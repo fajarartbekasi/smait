@@ -11,8 +11,9 @@
                         <h5 class="font-weight-bold">Perhatian !!!</h5>
                         <h5>Silahkan masukan data kelas dengan benar</h5>
                     </div>
-                    <form action="{{route('simpan-data.kelas')}}" method="post">
+                    <form action="{{route('update.kelas', $ruang->id)}}" method="post">
                         @csrf
+                        @method('PATCH')
                         @if(session('success'))
                             <div class="alert alert-success">
                                 {{ session('success')}}
@@ -22,13 +23,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="kd_ruang">Kode Ruangan</label>
-                                    <input type="text" name="kd_ruang" id="" class="form-control" placeholder="Kode Mapel">
+                                    <input type="text" name="kd_ruang" id="" value="{{$ruang->kd_ruang}}" class="form-control" placeholder="Kode Mapel">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nama">Nama Ruangan</label>
-                                    <input type="text" name="nama" id="" class="form-control" placeholder="Nama Pelajaran">
+                                    <input type="text" name="nama" id="" value="{{$ruang->nama}}" class="form-control" placeholder="Nama Pelajaran">
                                 </div>
                             </div>
                             <div class="col-md-4">
