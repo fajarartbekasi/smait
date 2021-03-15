@@ -53,6 +53,11 @@ Route::group(['prefix'=>'walikelas'], function(){
     route::get('/', 'WalasController@index')->name('walikelas');
 });
 
+Route::group(['prefix'=> 'users'], function(){
+    route::get('/','InvitationController@index')->name('users');
+    route::get('invite','InvitationController@create')->name('users.invite');
+});
+
 /**
  * pengelompokan route
  * untuk function store
@@ -61,6 +66,7 @@ Route::group(['prefix' => 'simpan-data'], function(){
     route::post('mapel','MapelController@store')->name('simpan-data.mapel');
     route::post('kelas','RuangkelasController@store')->name('simpan-data.kelas');
     route::post('jurusan','JurusanController@store')->name('simpan-data.jurusan');
+    route::post('invitation','InvitationController@store')->name('simpan-data.invitation');
 });
 
 /**

@@ -74,7 +74,7 @@
                             <a class="nav-link" href="{{ route('walikelas') }}">Walikelas</a>
                          </li>
                          <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Invitations</a>
+                            <a class="nav-link" href="{{ route('users') }}">Invitations</a>
                          </li>
                     </ul>
 
