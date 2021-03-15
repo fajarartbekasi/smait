@@ -8,7 +8,7 @@
                 <div class="card border-0">
                     <div class="card-body">
                         <h5>Data Guru</h5>
-                        <a href="{{route('guru.create')}}" class="btn btn-info mb-3">Tambah Guru Baru</a>
+                        <a href="{{route('buat-form.guru')}}" class="btn btn-info mb-3">Tambah Guru Baru</a>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>

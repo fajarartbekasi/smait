@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h5 class="font-weight-bold">Data User</h5>
                     <div class="mt-3 mb-3">
-                        <a href="{{route('users.invite')}}" class="btn btn-info">Invite new users</a>
+                        <a href="{{route('buat-form.invite')}}" class="btn btn-info">Invite new users</a>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped">

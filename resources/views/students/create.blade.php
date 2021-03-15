@@ -106,7 +106,7 @@
                                     <button type="submit" class="btn btn-info">
                                         Simpan Siswa Baru
                                     </button>
-                                    <a href="{{route('siswa')}}" class="btn btn-secondary">
+                                    <a href="{{route('ambil-data.siswa')}}" class="btn btn-secondary">
                                         Batal
                                     </a>
                                 </div>

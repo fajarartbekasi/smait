@@ -9,7 +9,8 @@
                 <div class="card-body">
                     <h5>Data Mapel</h5>
                     <div class="mt-3 mb-3">
-                        <a href="{{route('mapel.create')}}" class="btn btn-info">Tambah Mapel</a>
+                        <a href="{{route('buat-form.mapel')}}" class="btn btn-info">Tambah Mapel</a>
+                        <a href="{{route('buat-form.jadwal')}}" class="btn btn-info">Buat Jadwal</a>
                     </div>
                     @if(session('success'))
                             <div class="alert alert-danger">

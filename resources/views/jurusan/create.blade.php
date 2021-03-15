@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-md-4">
                                 <button class="btn btn-info">Simpan data</button>
-                                <a href="{{route('tahun-akademik')}}" class="btn btn-secondary">
+                                <a href="{{route('ambil-data.jurusan')}}" class="btn btn-secondary">
                                     Cancel
                                 </a>
                             </div>

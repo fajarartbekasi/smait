@@ -71,7 +71,7 @@
                             <a class="nav-link" href="{{ route('ambil-data.walikelas') }}">Walikelas</a>
                          </li>
                          <li class="nav-item">
-                            <a class="nav-link" href="{{ route('ambil-data.users') }}">Invitations</a>
+                            <a class="nav-link" href="{{ route('ambil-data.invitation') }}">Invitations</a>
                          </li>
                     </ul>
 

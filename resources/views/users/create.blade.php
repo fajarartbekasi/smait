@@ -51,7 +51,7 @@
                         <button type="submit" class="btn btn-info">
                             Add new members
                         </button>
-                        <a href="{{route('home')}}" class="btn btn-secondary">Home</a>
+                        <a href="{{route('ambil-data.invitation')}}" class="btn btn-secondary">Cancel</a>
                     </div>
                 </div>
             </form>

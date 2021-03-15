@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-info">Simpan Mapel Baru</button>
-                                <a href="http://" class="btn btn-secondary">Cancel</a>
+                                <a href="{{route('ambil-data.mapel')}}" class="btn btn-secondary">Cancel</a>
                             </div>
                         </div>
                     </form>

@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <h5>Data Kelas</h5>
                     <div class="mt-3 mb-3">
-                        <a href="{{route('kelas.create')}}" class="btn btn-info">Tambah kelas</a>
+                        <a href="{{route('buat-form.kelas')}}" class="btn btn-info">Tambah kelas</a>
                     </div>
                     @if(session('success'))
                         <div class="alert alert-danger">

@@ -57,7 +57,7 @@
                                 <button class="btn btn-info">
                                     Simpan data guru
                                 </button>
-                                <a href="{{route('guru')}}" class="btn btn-secondary">cancel</a>
+                                <a href="{{route('ambil-data.guru')}}" class="btn btn-secondary">cancel</a>
                             </div>
                         </div>
                     </form>

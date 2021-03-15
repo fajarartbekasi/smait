@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h5 class="font-weight-bold">Data Jurusan</h5>
                     <div class="mt-3 mb-3">
-                        <a href="{{route('jurusan.create')}}" class="btn btn-info">Tambah jurusan baru</a>
+                        <a href="{{route('buat-form.jurusan')}}" class="btn btn-info">Tambah jurusan baru</a>
                     </div>
                      @if(session('success'))
                         <div class="alert alert-danger">

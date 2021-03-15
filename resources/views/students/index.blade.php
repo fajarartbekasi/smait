@@ -10,7 +10,7 @@
                 <div class="card border-0">
                     <div class="card-body">
                         <h5>Data Siswa</h5>
-                        <a href="{{route('siswa.create')}}" class="btn btn-info mb-3">Tambah Siswa Baru</a>
+                        <a href="{{route('buat-form.siswa')}}" class="btn btn-info mb-3">Tambah Siswa Baru</a>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>

@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-info">Simpan Mapel Baru</button>
-                                <a href="{{route('kelas')}}" class="btn btn-secondary">Cancel</a>
+                                <a href="{{route('ambil-data.kelas')}}" class="btn btn-secondary">Cancel</a>
                             </div>
                         </div>
                     </form>
