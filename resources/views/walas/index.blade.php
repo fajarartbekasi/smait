@@ -12,27 +12,40 @@
                 <div class="card-body">
                     <h5 class="font-weight-bold">Tambah Walas</h5>
                     <div class="mt-3 mb-3">
-                        <a href="{{route('tahun-akademik.create')}}" class="btn btn-info">Tambah walas baru</a>
+                        <a href="" class="btn btn-info">Tambah walas baru</a>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Nama Jurusan</th>
-                                    <th>Kelas</th>
-                                    <th>Nama Guru</th>
+                                    <th>User Name</th>
+                                    <th>Email</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
-                        </table>
-                        <tbody>
-                            <tr>
-                                <td>Tahun Akademik</td>
-                                <td>Status</td>
-                                <td>Status</td>
-                                <td>Options</td>
-                            </tr>
+                            <tbody>
+                            @forelse($walas as $get)
+                                <tr>
+                                    <td>{{$get->name}}</td>
+                                    <td>{{$get->email}}</td>
+                                    <td>
+                                        <form action="" method="post">
+                                            <a href="http://" class="btn btn-warning btn-sm">Edit</a>
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                Hapus
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="3" class="text-center">
+                                        Maaf untuk sementara data walas belum tersedia
+                                    </td>
+                                </tr>
+                            @endforelse
                         </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

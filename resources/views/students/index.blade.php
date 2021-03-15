@@ -15,26 +15,30 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>NIM</th>
-                                        <th>Nama</th>
-                                        <th>T.T.L</th>
-                                        <th>Jenis Kelamin</th>
+                                        <th>User name</th>
+                                        <th>Email</th>
                                         <th>Options</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>8324242</td>
-                                        <td>John Doe</td>
-                                        <td>Bekasi, 20-03-2001</td>
-                                        <td>Laki-Laki</td>
-                                        <td>
-                                            <form action="" method="post">
-                                                <a href="http://" class="btn btn-outline-warning btn-sm">Edit</a>
-                                                <button class="btn btn-outline-danger btn-sm">Hapus</button>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                    @forelse($siswas as $siswa)
+                                        <tr>
+                                            <td>{{$siswa->name}}</td>
+                                            <td>{{$siswa->email}}</td>
+                                            <td>
+                                                <form action="" method="post">
+                                                    <a href="http://" class="btn btn-outline-warning btn-sm">Edit</a>
+                                                    <button class="btn btn-outline-danger btn-sm">Hapus</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="3" class="text-center">
+                                                Maaf data yang anda minta belum tersedia
+                                            </td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>

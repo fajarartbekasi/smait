@@ -21,41 +21,47 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix' => 'siswa'], function(){
-    route::get('/', 'SiswaController@index')->name('siswa');
+
     route::get('/create', 'SiswaController@create')->name('siswa.create');
 });
 
 Route::group(['prefix' => 'guru'], function(){
-    route::get('/', 'GuruController@index')->name('guru');
+
     route::get('/create', 'GuruController@create')->name('guru.create');
 });
 Route::group(['prefix'=>'mapel'], function(){
-    route::get('/','MapelController@index')->name('mapel');
+
     route::get('/create','MapelController@create')->name('mapel.create');
 });
 
 Route::group(['prefix' => 'kelas'], function(){
-    route::get('/', 'RuangkelasController@index')->name('kelas');
+
     route::get('/create', 'RuangkelasController@create')->name('kelas.create');
 });
 
-Route::group(['prefix'=> 'tahun-akademik'], function(){
-    route::get('/','TahunakademikController@index')->name('tahun-akademik');
-     route::get('create','TahunakademikController@create')->name('tahun-akademik.create');
-});
 
 Route::group(['prefix' => 'jurusan'], function(){
-    route::get('/', 'JurusanController@index')->name('jurusan');
+
     route::get('create', 'JurusanController@create')->name('jurusan.create');
 });
 
-Route::group(['prefix'=>'walikelas'], function(){
-    route::get('/', 'WalasController@index')->name('walikelas');
+Route::group(['prefix'=> 'users'], function(){
+
+    route::get('invite','InvitationController@create')->name('users.invite');
 });
 
-Route::group(['prefix'=> 'users'], function(){
-    route::get('/','InvitationController@index')->name('users');
-    route::get('invite','InvitationController@create')->name('users.invite');
+/**
+ * Pengelompokan route
+ * untuk function index
+ */
+Route::group(['prefix' => 'ambil-data'], function(){
+    route::get('siswa', 'SiswaController@index')->name('ambil-data.siswa');
+    route::get('guru', 'GuruController@index')->name('ambil-data.guru');
+    route::get('mapel','MapelController@index')->name('ambil-data.mapel');
+    route::get('jurusan', 'JurusanController@index')->name('ambil-data.jurusan');
+    route::get('kelas', 'RuangkelasController@index')->name('ambil-data.kelas');
+    route::get('ambil-data','InvitationController@index')->name('ambil-data.users');
+    route::get('walikelas', 'WalasController@index')->name('ambil-data.walikelas');
 });
 
 /**

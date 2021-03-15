@@ -44,10 +44,10 @@
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                          </li>
                          <li class="nav-item">
-                            <a class="nav-link" href="{{ route('siswa') }}">Siswa</a>
+                            <a class="nav-link" href="{{ route('ambil-data.siswa') }}">Siswa</a>
                          </li>
                          <li class="nav-item">
-                            <a class="nav-link" href="{{ route('guru') }}">Guru</a>
+                            <a class="nav-link" href="{{ route('ambil-data.guru') }}">Guru</a>
                          </li>
                          <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -56,25 +56,22 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('mapel') }}">
+                                <a class="dropdown-item" href="{{ route('ambil-data.mapel') }}">
                                     Mata Pelajaran
                                 </a>
-                                 <a class="dropdown-item" href="{{ route('kelas') }}">
+                                 <a class="dropdown-item" href="{{ route('ambil-data.kelas') }}">
                                     Ruang Kelas
                                 </a>
-                                 <a class="dropdown-item" href="{{ route('tahun-akademik') }}">
-                                    Tahun Akademik
-                                </a>
-                                 <a class="dropdown-item" href="{{ route('jurusan') }}">
+                                 <a class="dropdown-item" href="{{ route('ambil-data.jurusan') }}">
                                     Jurusan
                                 </a>
                             </div>
                         </li>
                          <li class="nav-item">
-                            <a class="nav-link" href="{{ route('walikelas') }}">Walikelas</a>
+                            <a class="nav-link" href="{{ route('ambil-data.walikelas') }}">Walikelas</a>
                          </li>
                          <li class="nav-item">
-                            <a class="nav-link" href="{{ route('users') }}">Invitations</a>
+                            <a class="nav-link" href="{{ route('ambil-data.users') }}">Invitations</a>
                          </li>
                     </ul>
 

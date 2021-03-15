@@ -13,26 +13,30 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>NUPTK</th>
                                         <th>Nama</th>
-                                        <th>T.T.L</th>
-                                        <th>Jenis Kelamin</th>
+                                        <th>Email</th>
                                         <th>Options</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>8324242</td>
-                                        <td>John Doe</td>
-                                        <td>Bekasi, 20-03-2001</td>
-                                        <td>Laki-Laki</td>
-                                        <td>
-                                            <form action="" method="post">
-                                                <a href="http://" class="btn btn-outline-warning btn-sm">Edit</a>
-                                                <button class="btn btn-outline-danger btn-sm">Hapus</button>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                    @forelse($gurus as $guru)
+                                        <tr>
+                                            <td>{{$guru->name}}</td>
+                                            <td>{{$guru->email}}</td>
+                                            <td>
+                                                <form action="" method="post">
+                                                    <a href="http://" class="btn btn-outline-warning btn-sm">Edit</a>
+                                                    <button class="btn btn-outline-danger btn-sm">Hapus</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="3" class="text-center">
+                                                Maaf data yang anda minta saat ini belum tersedia
+                                            </td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>
