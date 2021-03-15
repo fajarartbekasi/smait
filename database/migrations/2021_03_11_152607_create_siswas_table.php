@@ -18,6 +18,7 @@ class CreateSiswasTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('tempat_lahir')->nullable();
             $table->string('tanggal_lahir')->nullable();
+            $table->string('nisn')->nullable();
             $table->string('gender')->nullable();
             $table->string('alamat')->nullable();
             $table->string('profile')->nullable();
