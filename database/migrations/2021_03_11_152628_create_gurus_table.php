@@ -19,9 +19,10 @@ class CreateGurusTable extends Migration
             $table->string('nuptk')->nullable();
             $table->string('agama')->nullable();
             $table->string('jenis_kelamin')->nullable();
+            $table->string('tmp_lahir')->nullable();
+            $table->string('tgl_lahir')->nullable();
             $table->string('alamat')->nullable();
             $table->string('telp')->nullable();
-            $table->string('profile')->nullable();
             $table->timestamps();
         });
     }

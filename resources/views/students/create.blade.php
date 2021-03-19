@@ -16,20 +16,15 @@
                         </div>
                     </div>
                     <div>
-                        <form action="" method="post">
+                        <form action="{{route('update.siswa', $user->id)}}" method="post">
                             @csrf
-
+                            @method('PATCH')
+                            <input type="hidden" name="user_id" id="" value="{{$user->id}}" class="form-control" placeholder="Nim">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="nim">Nim</label>
-                                        <input type="text" name="nim" id="" class="form-control" placeholder="Nim">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="nama">Nama Lengkap</label>
-                                        <input type="text" name="nama" id="" class="form-control" placeholder="Nama lengkap">
+                                        <label for="nim">Nisn</label>
+                                        <input type="text" name="nisn" id="" class="form-control" placeholder="Nim">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -37,10 +32,10 @@
                                         <label for="nim">Tempat Tanggal Lahir</label>
                                         <div class="row ">
                                             <div class="col-md-6">
-                                                <input type="text" name="tmp_lahir" id="" class="form-control" placeholder="Nim">
+                                                <input type="text" name="tempat_lahir" id="" class="form-control" placeholder="Nim">
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="date" name="tgl_lahir" id="" class="form-control" >
+                                                <input type="date" name="tanggal_lahir" id="" class="form-control" >
                                             </div>
                                         </div>
                                     </div>
@@ -48,7 +43,7 @@
                                 <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Jenis Kelamin</label>
-                                    <select name="" class="form-control" id="">
+                                    <select name="gender" class="form-control" id="">
                                         <option value="">Pilih Jenis Kelamin</option>
                                         <option value="laki - laki">Laki - Laki</option>
                                         <option value="wanita">Wanita</option>
@@ -56,50 +51,10 @@
                                 </div>
 
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="">Agama</label>
-                                        <select name="" class="form-control" id="">
-                                            <option value="">Masukan Agama anda</option>
-                                            <option value="islam">Islam</option>
-                                            <option value="kristen">Kristen</option>
-                                            <option value="hindu">Hindu</option>
-                                            <option value="budha">Budha</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="nim">Nama Orang Tua</label>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input type="text" name="bapak" id="" class="form-control" placeholder="Nama Bapak">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input type="text" name="ibu" id="" class="form-control" placeholder="Nama Ibu">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="alamat">Alamat</label>
                                         <textarea name="alamat" id="" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="asal_sekolah">Sekolah Asal</label>
-                                        <input type="text" name="asal_sekolah" id="" class="form-control" placeholder="Asal Sekolah">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="images">Photo</label>
-                                        <input type="file" name="images" id="" class="form-control">
-                                        <span class="text-danger">
-                                            File wajib: JPG,PNG
-                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-md-4">

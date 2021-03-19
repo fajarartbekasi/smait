@@ -8,7 +8,6 @@
                 <div class="card border-0">
                     <div class="card-body">
                         <h5>Data Guru</h5>
-                        <a href="{{route('buat-form.guru')}}" class="btn btn-info mb-3">Tambah Guru Baru</a>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
@@ -24,8 +23,11 @@
                                             <td>{{$guru->name}}</td>
                                             <td>{{$guru->email}}</td>
                                             <td>
-                                                <form action="" method="post">
-                                                    <a href="http://" class="btn btn-outline-warning btn-sm">Edit</a>
+                                                <form action="{{route('destroy.guru', $guru->id)}}" method="post">
+                                                    @csrf
+
+                                                    @method('DELETE')
+                                                    <a href="{{route('ambil-form-edit.guru',$guru->id)}}" class="btn btn-outline-warning btn-sm">Edit</a>
                                                     <button class="btn btn-outline-danger btn-sm">Hapus</button>
                                                 </form>
                                             </td>

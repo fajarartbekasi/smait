@@ -11,11 +11,11 @@ class RuangkelasController extends Controller
     {
         $ruangs = Ruang::paginate(5);
 
-        return view('kelas.index',compact('ruangs'));
+        return view('ruang.index',compact('ruangs'));
     }
     public function create()
     {
-        return view('kelas.create');
+        return view('ruang.create');
     }
     public function store(Request $request)
     {
@@ -37,7 +37,7 @@ class RuangkelasController extends Controller
     {
        $ruang = Ruang::findOrFail($id);
 
-       return view('kelas.edit', compact('ruang'));
+       return view('ruang.edit', compact('ruang'));
     }
     public function update(Request $request, $id)
     {
@@ -59,7 +59,7 @@ class RuangkelasController extends Controller
          $ruang->delete();
 
          return redirect()->back()->with([
-            'success' => 'Upss Data kelas terhapus.'
+            'success' => 'Upss Data ruang terhapus.'
         ]);
     }
 }

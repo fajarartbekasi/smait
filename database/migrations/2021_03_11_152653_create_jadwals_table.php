@@ -18,7 +18,8 @@ class CreateJadwalsTable extends Migration
             $table->unsignedInteger('jurusan_id');
             $table->unsignedInteger('mapel_id');
             $table->unsignedInteger('kela_id');
-            $table->string('jam');
+            $table->string('jam_awal');
+            $table->string('jam_akhir');
             $table->string('hari');
             $table->timestamps();
         });

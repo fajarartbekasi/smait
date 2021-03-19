@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('content')
 
 <div class="container">
@@ -10,7 +9,7 @@
                 <div class="card-body">
                     <h5>Data Kelas</h5>
                     <div class="mt-3 mb-3">
-                        <a href="{{route('buat-form.kelas')}}" class="btn btn-info">Tambah kelas</a>
+                        <a href="{{route('buat-form.ruang')}}" class="btn btn-info">Tambah kelas</a>
                     </div>
                     @if(session('success'))
                         <div class="alert alert-danger">
@@ -21,20 +20,22 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Nama Kelas</th>
+                                    <th>Kode Ruangan</th>
+                                    <th>Nama Ruangan</th>
                                     <th>Option</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @forelse($kelas as $kela)
+                                @forelse($ruangs as $ruang)
                                     <tr>
-                                        <td>{{$kela->nama}}</td>
+                                        <td>{{$ruang->kd_ruang}}</td>
+                                        <td>{{$ruang->nama}}</td>
                                         <td>
-                                            <form action="{{route('destroy.ruang', $kela->id)}}" method="post">
+                                            <form action="{{route('destroy.ruang', $ruang->id)}}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="{{route('ambil-form-edit.ruang', $kela->id)}}" class="btn btn-outline-warning btn-sm">Edit</a>
+                                                <a href="{{route('ambil-form-edit.ruang', $ruang->id)}}" class="btn btn-outline-warning btn-sm">Edit</a>
                                                 <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
                                             </form>
                                         </td>
@@ -54,5 +55,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection

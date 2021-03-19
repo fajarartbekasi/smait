@@ -10,34 +10,44 @@
                         <h5 class="font-weight-bold">Perhatian !!!</h5>
                         <h6>Silahkan masukan data guru dengan benar dan lengkap.</h6>
                     </div>
-                    <form action="" method="post">
+                    <form action="{{route('update.guru', $teacher->id)}}" method="post">
+                        @csrf
+
+                        @method('PATCH')
+                        <input type="hidden" name="user_id" value="{{$teacher->id}}">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nuptk">NUPTK</label>
                                     <input type="text" name="nuptk" id="" class="form-control" placeholder="NUPTK">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="nama">Nama Lengkap</label>
-                                    <input type="text" name="nama" id="" class="form-control" placeholder="Nama Lengkap">
+                                    <label for="">Agama</label>
+                                    <select name="agama" class="form-control" id="">
+                                        <option value="">Agama</option>
+                                        <option value="Islam">Islam</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Budha">Budha</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nuptk">Tempat Tanggal Lahir</label>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <input type="text" name="tmp_lahir" id="" class="form-control" placeholder="Tempat Lahir">
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <input type="date" name="tgl_lahir" id="" class="form-control" >
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nama">Jenis Kelamin</label>
                                     <select name="jenis_kelamin" class="form-control" id="">
@@ -47,10 +57,17 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="images">Photo</label>
-                                    <input type="file" name="images" id="" class="form-control">
+                                    <label for="">Alamat</label>
+                                    <textarea name="alamat" id="" class="form-control">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Telp</label>
+                                    <input type="text" name="telp" class="form-control" id="">
                                 </div>
                             </div>
                             <div class="col-md-6">
