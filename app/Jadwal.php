@@ -7,15 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Jadwal extends Model
 {
     protected $table = 'jadwals';
-    protected $fillable = [
-        'jurusan_id','mapel_id','kela_id','jam','hari'
-    ];
+    protected $guarded = [];
 
-    protected $casts = [
-        'mapel_id' => 'array',
-    ];
-    public function setAttriute($values)
+    public function kela()
     {
-        $this->attributes['mapel_id'] = json_encode($value);
+        return $this->belongsTo(Kela::class);
+    }
+    public function mapel()
+    {
+        return $this->belongsTo(Mapel::class);
     }
 }

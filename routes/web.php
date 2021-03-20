@@ -91,3 +91,10 @@ Route::group(['prefix'=>'destroy'], function(){
     route::delete('guru/{user}','GuruController@destroy')->name('destroy.guru');
     route::delete('kelas/{kela}','KelasController@destroy')->name('destroy.kelas');
 });
+
+/**
+ * route detail jadwal
+ */
+Route::group(['prefix'=>'lihat'], function(){
+    route::get('jadwal/{jadwal}', 'JadwalController@show')->name('lihat.jadwal');
+});

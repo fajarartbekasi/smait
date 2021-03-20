@@ -4,29 +4,18 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card border-0">
                 <div class="card-body">
-                    <div class="aler alert-info">
+                    <div class="alert alert-info">
                         <h5 class="font-weight-bold">Perhatian !!!</h5>
                         <h5>Silahkan masukan data pelajaran dengan benar</h5>
                     </div>
                     <form action="{{route('simpan-data.jadwal')}}" method="post">
                         @csrf
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Pilih Mapel</label>
-                                    <select name="mapel_id" id="" class="form-control">
-                                        <option value="">Pilih mapel</option>
-                                        @foreach($mapels as $jadwal)
-                                        <option value="{{$jadwal->id}}">{{$jadwal->nama}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="">Hari</label>
                                     <select name="hari" id="" class="form-control">
@@ -39,8 +28,32 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Jam Awal</label>
+                                    <input type="time" name="jam_awal" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Jam Akhir</label>
+                                    <input type="time" name="jam_akhir" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Pilih Mapel</label>
+                                    <select name="mapel_id" id="" class="form-control">
+                                        <option value="">Pilih mapel</option>
+                                        @foreach($mapels as $jadwal)
+                                        <option value="{{$jadwal->id}}">{{$jadwal->nama}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
 
-                            <div class="col-md-6">
+
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="">Kelas</label>
                                     <select name="kela_id" id="" class="form-control">
@@ -55,33 +68,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Jurusan</label>
-                                    <select name="jurusan_id" id="" class="form-control">
-                                        <option value="">*** jurusan ***</option>
-                                        @forelse($jurusans as $jurusan)
-                                        <option value="{{$jurusan->id}}">{{$jurusan->nama}}</option>
-                                        @empty
-                                        <option value="">
-                                            maaf jurusan belum tersedia
-                                        </option>
-                                        @endforelse
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Jam Awal</label>
-                                    <input type="time" name="jam_awal" id="" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Jam Akhir</label>
-                                    <input type="time" name="jam_akhir" id="" class="form-control">
-                                </div>
-                            </div>
+
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-info">
                                     Tambah Jadwal

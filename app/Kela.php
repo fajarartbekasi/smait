@@ -13,4 +13,8 @@ class Kela extends Model
     {
         return $this->belongsTo(Wala::class);
     }
+    public function jadwals()
+    {
+        return $this->hasMany(Jadwal::class);
+    }
 }
