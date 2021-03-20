@@ -70,6 +70,7 @@ Route::group(['[prefix' => 'ambil-form-edit'], function(){
     route::get('siswa/{user}','SiswaController@edit')->name('ambil-form-edit.siswa');
     route::get('guru/{user}','GuruController@edit')->name('ambil-form-edit.guru');
     route::get('walas/{user}','WalasController@edit')->name('ambil-form-edit.walas');
+    route::get('kelas/{kela}','KelasController@edit')->name('ambil-form-edit.kelas');
 });
 
 /**
@@ -82,6 +83,7 @@ Route::group(['prefix' => 'update'], function(){
     route::patch('siswa/{siswa}', 'SiswaController@update')->name('update.siswa');
     route::patch('guru/{guru}', 'GuruController@update')->name('update.guru');
     route::patch('walas/{user}', 'WalasController@update')->name('update.walas');
+    route::patch('kelas/{kela}', 'KelasController@update')->name('update.kelas');
 });
 
 /**
@@ -93,4 +95,5 @@ Route::group(['prefix'=>'destroy'], function(){
     route::delete('jurusan/{jurusan}','JurusanController@destroy')->name('destroy.jurusan');
     route::delete('siswa/{user}','SiswaController@destroy')->name('destroy.siswa');
     route::delete('guru/{user}','GuruController@destroy')->name('destroy.guru');
+    route::delete('kelas/{kela}','KelasController@destroy')->name('destroy.kelas');
 });

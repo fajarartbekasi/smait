@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card border-0">
                 <div class="card-body">
                     <div class="alert alert-info">
@@ -18,18 +18,31 @@
                                 {{ session('success')}}
                             </div>
                         @endif
-                        <div class="row">
+                        <div class="form-group">
+                            <label for="nama">Nama Kela</label>
+                            <input type="text" name="nama" id="" class="form-control" placeholder="Nama Pelajaran">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Pilih paket keahlian</label>
+                            <select name="keahlian" class="form-control" id="">
+                                <option value="">Pilih Keahlian</option>
+                                <option value="ipa">IPA</option>
+                                <option value="ips">IPS</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Pilih Wali kelas</label>
+                            <select name="wala_id" class="form-control" id="">
+                                <option value="">Pilih walikelas</option>
+                                @foreach($walas as $get)
+                                    <option value="{{$get->id}}">{{$get->user->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="nama">Nama Kela</label>
-                                    <input type="text" name="nama" id="" class="form-control" placeholder="Nama Pelajaran">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <button type="submit" class="btn btn-info">Simpan data kelas</button>
-                                <a href="{{route('ambil-data.kelas')}}" class="btn btn-secondary">Cancel</a>
-                            </div>
+                       <div class="row col-md-6">
+                            <button type="submit" class="btn btn-info mr-3">Simpan data kelas</button>
+                            <a href="{{route('ambil-data.kelas')}}" class="btn btn-secondary">Cancel</a>
                         </div>
                     </form>
                 </div>

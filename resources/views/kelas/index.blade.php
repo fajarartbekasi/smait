@@ -22,6 +22,8 @@
                             <thead>
                                 <tr>
                                     <th>Nama Kelas</th>
+                                    <th>Keahlian</th>
+                                    <th>Nama Walas</th>
                                     <th>Option</th>
                                 </tr>
                             </thead>
@@ -30,11 +32,13 @@
                                 @forelse($kelas as $kela)
                                     <tr>
                                         <td>{{$kela->nama}}</td>
+                                        <td>{{$kela->keahlian}}</td>
+                                        <td>{{$kela->wala->user->name}}</td>
                                         <td>
-                                            <form action="{{route('destroy.ruang', $kela->id)}}" method="post">
+                                            <form action="{{route('destroy.kelas', $kela->id)}}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="{{route('ambil-form-edit.ruang', $kela->id)}}" class="btn btn-outline-warning btn-sm">Edit</a>
+                                                <a href="{{route('ambil-form-edit.kelas', $kela->id)}}" class="btn btn-outline-warning btn-sm">Edit</a>
                                                 <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
                                             </form>
                                         </td>

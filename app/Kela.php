@@ -8,4 +8,9 @@ class Kela extends Model
 {
     protected $table = 'kelas';
     protected $guarded = [];
+
+    public function wala()
+    {
+        return $this->belongsTo(Wala::class);
+    }
 }

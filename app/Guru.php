@@ -13,4 +13,8 @@ class Guru extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function walas()
+    {
+        return $this->hasMany(Wala::class);
+    }
 }

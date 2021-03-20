@@ -10,5 +10,17 @@ class Wala extends Model
 
     protected $guarded = [];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function guru()
+    {
+        return $this->belongsTo(Guru::class);
+    }
+    public function kelas()
+    {
+        return $this->hasMany(Kela::class);
+    }
 
 }
