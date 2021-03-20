@@ -12,7 +12,7 @@ class SiswaController extends Controller
     public function index()
     {
         $siswas = User::whereHas('roles', function($role){
-                $role->where('roles.name','=','siswa');
+                $role->where('roles.name','=','Siswa');
         })->paginate(5);
 
         return view('students.index', compact('siswas'));

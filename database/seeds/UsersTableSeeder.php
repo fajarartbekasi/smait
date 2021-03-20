@@ -1,4 +1,5 @@
 <?php
+use App\Wala;
 use App\User;
 use App\Guru;
 use App\Siswa;
@@ -57,6 +58,12 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('laravel'),
         ]);
 
+        if($walas->save()){
+
+            $guruprofile = Wala::create([
+                'user_id'   => $walas->id,
+            ]);
+        }
         $walas->assignRole('walas');
 
         $this->command->info('>_ Here is your walas details to login:');

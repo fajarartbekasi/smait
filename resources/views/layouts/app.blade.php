@@ -59,9 +59,6 @@
                                 <a class="dropdown-item" href="{{ route('ambil-data.mapel') }}">
                                     Mata Pelajaran
                                 </a>
-                                 <a class="dropdown-item" href="{{ route('ambil-data.ruang') }}">
-                                    Ruang
-                                </a>
                                 <a class="dropdown-item" href="{{ route('ambil-data.kelas') }}">
                                     Kelas
                                 </a>
