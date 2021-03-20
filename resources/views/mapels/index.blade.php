@@ -21,16 +21,18 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Kode Mapel</th>
                                     <th>Nama Mapel</th>
+                                    <th>Paket</th>
+                                    <th>Jenis Mapel</th>
                                     <th>Option</th>
                                 </tr>
                             </thead>
                             <tbody>
                             @forelse($mapels as $mapel)
                                 <tr>
-                                    <td>{{$mapel->kd_mapel}}</td>
                                     <td>{{$mapel->nama}}</td>
+                                    <td>{{$mapel->paket}}</td>
+                                    <td>{{$mapel->jenis_mapel}}</td>
                                     <td>
                                         <form action="{{route('destroy.mapel', $mapel->id)}}" method="post">
 

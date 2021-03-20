@@ -62,9 +62,6 @@
                                 <a class="dropdown-item" href="{{ route('ambil-data.kelas') }}">
                                     Kelas
                                 </a>
-                                 <a class="dropdown-item" href="{{ route('ambil-data.jurusan') }}">
-                                    Jurusan
-                                </a>
                             </div>
                         </li>
                          <li class="nav-item">

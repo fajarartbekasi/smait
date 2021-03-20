@@ -19,13 +19,15 @@ class MapelController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'kd_mapel' => 'required|max:3',
-            'nama'     => 'required',
+            'paket'             => 'required',
+            'nama'              => 'required',
+            'jenis_mapel'       => 'required',
         ]);
 
         $mapel = Mapel::create([
-            'kd_mapel'  => $request->input('kd_mapel'),
-            'nama'      => $request->input('nama'),
+            'nama'              => $request->input('nama'),
+            'paket'             => $request->input('paket'),
+            'jenis_mapel'       => $request->input('jenis_mapel'),
         ]);
 
         return redirect()->back()->with([
@@ -42,8 +44,9 @@ class MapelController extends Controller
     {
         $mapel = Mapel::findOrFail($id);
 
-        $mapel->kd_mapel = $request->input('kd_mapel');
-        $mapel->nama     = $request->input('nama');
+        $mapel->nama            = $request->input('nama');
+        $mapel->paket           = $request->input('paket');
+        $mapel->jenis_mapel     = $request->input('jenis_mapel');
 
         $mapel->save();
 

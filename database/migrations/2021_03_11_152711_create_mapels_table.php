@@ -15,9 +15,9 @@ class CreateMapelsTable extends Migration
     {
         Schema::create('mapels', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('guru_id');
-            $table->string('kd_mapel');
             $table->string('nama');
+            $table->string('paket');
+            $table->string('jenis_mapel');
             $table->timestamps();
         });
     }
