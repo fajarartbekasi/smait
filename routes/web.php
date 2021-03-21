@@ -67,6 +67,7 @@ Route::group(['[prefix' => 'ambil-form-edit'], function(){
     route::get('guru/{user}','GuruController@edit')->name('ambil-form-edit.guru');
     route::get('walas/{user}','WalasController@edit')->name('ambil-form-edit.walas');
     route::get('kelas/{kela}','KelasController@edit')->name('ambil-form-edit.kelas');
+    route::get('jadwal/{jadwal}','JadwalController@edit')->name('ambil-form-edit.jadwal');
 });
 
 /**
@@ -79,6 +80,7 @@ Route::group(['prefix' => 'update'], function(){
     route::patch('guru/{guru}', 'GuruController@update')->name('update.guru');
     route::patch('walas/{user}', 'WalasController@update')->name('update.walas');
     route::patch('kelas/{kela}', 'KelasController@update')->name('update.kelas');
+    route::patch('jadwal/{jadwal}', 'JadwalController@update')->name('update.jadwal');
 });
 
 /**
@@ -90,6 +92,7 @@ Route::group(['prefix'=>'destroy'], function(){
     route::delete('siswa/{user}','SiswaController@destroy')->name('destroy.siswa');
     route::delete('guru/{user}','GuruController@destroy')->name('destroy.guru');
     route::delete('kelas/{kela}','KelasController@destroy')->name('destroy.kelas');
+    route::delete('jadawl/{jadwal}','JadwalController@destroy')->name('destroy.jadwal');
 });
 
 /**

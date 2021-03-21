@@ -27,6 +27,28 @@ class JadwalController extends Controller
         ];
         return view('jadwals.create', $data);
     }
+    public function edit($id)
+    {
+       $jadwal = Jadwal::findOrFail($id);
+       $kelas = Kela::all();
+       $mapels = Mapel::all();
+
+       return view('jadwals.edit', compact(['jadwal','kelas','mapels']));
+    }
+    public function update(Request $request, $id)
+    {
+        $jadwal = Jadwal::findOrFail($id);
+
+        $jadwal->hari       = $request->input('hari');
+        $jadwal->jam_awal   = $request->input('jam_awal');
+        $jadwal->jam_akhir  = $request->input('jam_akhir');
+        $jadwal->mapel_id   = $request->input('mapel_id');
+        $jadwal->kela_id    = $request->input('kela_id');
+
+        $jadwal->save();
+
+        return redirect()->back()->with(['success','Jadwal berhasil di ubah']);
+    }
     public function show($id)
     {
         $kelas = Kela::where('id', $id)->firstOrFail();
@@ -58,5 +80,16 @@ class JadwalController extends Controller
         return redirect()->back()->with([
             'success' => 'Jadwal pelajaran telah dibuat terimakasih'
         ]);
+    }
+    public function destroy($id)
+    {
+        $jadwal = Jadwal::findOrFail($id);
+
+        $jadwal->delete();
+
+        return redirect()->back()->with([
+            'success' => 'Jadwal berhasil di hapus'
+        ]);
+
     }
 }

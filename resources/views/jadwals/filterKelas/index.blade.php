@@ -31,8 +31,10 @@
                                                 <td>{{$get->jam_akhir}}</td>
                                             @endforeach
                                             <td>
-                                                <form action="">
-                                                    <a href="http://" class="btn btn-sm btn-warning">Edit</a>
+                                                <form action="{{route('destroy.jadwal', $show->id)}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <a href="{{route('ambil-form-edit.jadwal', $show->id)}}" class="btn btn-sm btn-warning">Edit</a>
                                                     <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                                                 </form>
                                             </td>

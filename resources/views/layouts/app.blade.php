@@ -43,36 +43,60 @@
                          <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                          </li>
-                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('ambil-data.siswa') }}">Siswa</a>
-                         </li>
-                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('ambil-data.guru') }}">Guru</a>
-                         </li>
                          <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Data Master
+                                Master Data
                                <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('ambil-data.jadwal') }}">
+                                   Data Jadwal
+                                </a>
                                 <a class="dropdown-item" href="{{ route('ambil-data.mapel') }}">
-                                    Mata Pelajaran
+                                    Data Mapel
                                 </a>
                                 <a class="dropdown-item" href="{{ route('ambil-data.kelas') }}">
-                                    Kelas
+                                   Data Kelas
                                 </a>
-                                <a class="dropdown-item" href="{{ route('ambil-data.jadwal') }}">
-                                    Jadwal
+                                <a class="dropdown-item" href="{{ route('ambil-data.guru') }}">
+                                   Data Guru
+                                </a>
+                                <a class="dropdown-item" href="{{ route('ambil-data.siswa') }}">
+                                   Data Siswa
+                                </a>
+                                <a class="dropdown-item" href="{{ route('ambil-data.walikelas') }}">
+                                    Data Walikelas
+                                </a>
+                                <a class="dropdown-item" href="{{ route('ambil-data.invitation') }}">
+                                    Invitations
                                 </a>
                             </div>
                         </li>
-                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('ambil-data.walikelas') }}">Walikelas</a>
-                         </li>
-                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('ambil-data.invitation') }}">Invitations</a>
-                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home') }}">Absensi Guru</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Nilai
+                               <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('ambil-data.jadwal') }}">
+                                   Nilai Ulangan
+                                </a>
+                                <a class="dropdown-item" href="{{ route('ambil-data.mapel') }}">
+                                   Nilai Sikap
+                                </a>
+                                <a class="dropdown-item" href="{{ route('ambil-data.kelas') }}">
+                                   Nilai Raport
+                                </a>
+                                <a class="dropdown-item" href="{{ route('ambil-data.guru') }}">
+                                   Deskripsi Predikat
+                                </a>
+                            </div>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
