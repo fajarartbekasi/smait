@@ -47,4 +47,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Guru::class);
     }
+    public function absensis()
+    {
+        return $this->hasMany(Absensi::class);
+    }
 }
