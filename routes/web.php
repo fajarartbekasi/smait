@@ -33,6 +33,9 @@ Route::group(['prefix' => 'ambil-data'], function(){
     route::get('walikelas', 'WalasController@index')->name('ambil-data.walikelas');
     route::get('jadwal', 'JadwalController@index')->name('ambil-data.jadwal');
     route::get('absensi', 'AbsenController@index')->name('ambil-data.absensi');
+    route::get('predikat', 'PredikatController@index')->name('ambil-data.predikat');
+    route::get('sikap', 'NilaisikapController@index')->name('ambil-data.sikap');
+    route::get('ulangan', 'UlanganController@index')->name('ambil-data.ulangan');
 });
 /**
  * pengelompokan route

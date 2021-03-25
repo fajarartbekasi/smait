@@ -83,16 +83,16 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('ambil-data.jadwal') }}">
+                                <a class="dropdown-item" href="{{ route('ambil-data.ulangan') }}">
                                    Nilai Ulangan
                                 </a>
-                                <a class="dropdown-item" href="{{ route('ambil-data.mapel') }}">
+                                <a class="dropdown-item" href="{{ route('ambil-data.sikap') }}">
                                    Nilai Sikap
                                 </a>
                                 <a class="dropdown-item" href="{{ route('ambil-data.kelas') }}">
                                    Nilai Raport
                                 </a>
-                                <a class="dropdown-item" href="{{ route('ambil-data.guru') }}">
+                                <a class="dropdown-item" href="{{ route('ambil-data.predikat') }}">
                                    Deskripsi Predikat
                                 </a>
                             </div>
