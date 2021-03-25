@@ -15,10 +15,10 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                <td>Kode Mapel</td>
-                                <td>Mapel</td>
-                                    <td rowspan="2" class="text-center">KKM</td>
-                                    <td colspan="4" class="text-center">Little</td>
+                                    <td>Kode Mapel</td>
+                                    <td>Mapel</td>
+                                        <td rowspan="2" class="text-center">KKM</td>
+                                        <td colspan="4" class="text-center">Little</td>
                                 </tr>
                                 <tr>
                                     <td class="border-0"></td>

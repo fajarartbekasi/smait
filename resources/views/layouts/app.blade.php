@@ -95,6 +95,16 @@
                                 <a class="dropdown-item" href="{{ route('ambil-data.predikat') }}">
                                    Deskripsi Predikat
                                 </a>
+                                <!-- role guru -->
+                                <a class="dropdown-item" href="{{ route('buat-form.predikat') }}">
+                                   Input Predikat
+                                </a>
+                                <a href="{{route('ambil-data.ulangan.siswa')}}" class="dropdown-item">
+                                    Input Nilai Ulangan
+                                </a>
+                                <a href="{{route('ambil-data.raport.siswa')}}" class="dropdown-item">
+                                    Input Nilai Raport
+                                </a>
                             </div>
                         </li>
                     </ul>

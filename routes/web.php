@@ -36,6 +36,8 @@ Route::group(['prefix' => 'ambil-data'], function(){
     route::get('predikat', 'PredikatController@index')->name('ambil-data.predikat');
     route::get('sikap', 'NilaisikapController@index')->name('ambil-data.sikap');
     route::get('ulangan', 'UlanganController@index')->name('ambil-data.ulangan');
+    route::get('ulangan/siswa', 'Nilai\UlanganController@index')->name('ambil-data.ulangan.siswa');
+    route::get('raport/siswa', 'Nilai\RaportController@index')->name('ambil-data.raport.siswa');
 });
 /**
  * pengelompokan route
@@ -48,6 +50,8 @@ Route::group(['prefix'=> 'buat-form'], function(){
 
 
     route::get('jadwal','JadwalController@create')->name('buat-form.jadwal');
+    route::get('predikat', 'PredikatController@create')->name('buat-form.predikat');
+    route::get('entry-nilai', 'Nilai\UlanganController@create')->name('buat-form.entry-nilai');
 });
 
 /**

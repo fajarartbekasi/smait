@@ -10,4 +10,8 @@ class PredikatController extends Controller
     {
         return view('nilai.predikat.index');
     }
+    public function create()
+    {
+        return view('nilai.predikat.create');
+    }
 }
