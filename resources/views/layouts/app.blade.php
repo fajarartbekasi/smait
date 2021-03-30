@@ -135,6 +135,11 @@
                                 </div>
                             </li>
                         @endrole
+                        @role('siswa')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('buat-form.absensi-siswa') }}">Absensi</a>
+                            </li>
+                        @endrole
                     </ul>
                     @endauth
                     <!-- Right Side Of Navbar -->

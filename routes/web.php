@@ -55,6 +55,7 @@ Route::group(['prefix'=> 'buat-form'], function(){
 
 
     route::get('absensi-guru','AbsenController@create')->name('buat-form.absensi-guru');
+    route::get('absensi-siswa','AbsensisiswaController@create')->name('buat-form.absensi-siswa');
 });
 
 /**
@@ -67,6 +68,7 @@ Route::group(['prefix' => 'simpan-data'], function(){
     route::post('kelas','KelasController@store')->name('simpan-data.kelas');
     route::post('jadwal','JadwalController@store')->name('simpan-data.jadwal');
     route::post('absensi-guru','AbsenController@store')->name('simpan-data.absensi-guru');
+    route::post('absensi-siswa','AbsensisiswaController@store')->name('simpan-data.absensi-siswa');
 });
 
 /**
