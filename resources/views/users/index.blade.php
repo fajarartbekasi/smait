@@ -30,7 +30,7 @@
                                         <td>{{$user->roles->implode('name',',')}}</td>
                                         <td>
                                             <form action="" method="post">
-                                                <a href="http://" class="btn btn-warning btn-sm">Edit</a>
+
                                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                             </form>
                                         </td>
