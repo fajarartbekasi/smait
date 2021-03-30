@@ -16,6 +16,7 @@ class CreateJadwalsTable extends Migration
         Schema::create('jadwals', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('mapel_id');
+            $table->unsignedInteger('user_id');
             $table->unsignedInteger('kela_id');
             $table->string('jam_awal');
             $table->string('jam_akhir');

@@ -31,7 +31,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="">Jam Awal</label>
-                                    <input type="time" name="jam_awal" id="" class="form-control">
+                                    <input type="date" name="jam_awal" id="" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-12">
