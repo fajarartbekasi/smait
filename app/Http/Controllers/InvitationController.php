@@ -6,6 +6,7 @@ use App\User;
 use App\Siswa;
 use App\Guru;
 use App\Role;
+use App\Wala;
 use Illuminate\Http\Request;
 
 class InvitationController extends Controller
@@ -68,6 +69,19 @@ class InvitationController extends Controller
                     return redirect()->back()->with([
                         'success' => 'Anda berhasil menambahkan Siswa baru'
                     ]);
+                }elseif($findUser->roles->first()->name == 'walas'){
+                    $teacher = Guru::create([
+                        'user_id'   => $findUser->id,
+                    ]);
+                    if($teacher->save()){
+                        $walas = Wala::create([
+                            'user_id'   => $findUser->id,
+                            'guru_id'   => $teacher->user_id,
+                        ]);
+                    }
+                    return redirect()->back()->with([
+                        'success' => 'Anda berhasil menambahkan Walas baru'
+                    ]);
                 }
 
         } else {
@@ -76,5 +90,33 @@ class InvitationController extends Controller
                     ]);
         }
         return redirect()->back();
+    }
+    public function edit($id)
+    {
+        $user = User::with('roles')->find($id);
+        $roles = Role::all();
+
+        return view('users.edit', compact('user','roles'));
+    }
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'bail|required|min:2',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'roles' => 'required|min:1'
+        ]);
+        $user = User::findOrFail($id);
+
+        $user->fill($request->except('roles','password'));
+
+        if($request->get('password')) {
+            $user->password = bcrypt($request->get('password'));
+        }
+
+        $this->syncPermissions($request, $user);
+
+        $user->update($request->all());
+
+        return redirect()->back()->with(['success' => 'terimakasih']);
     }
 }

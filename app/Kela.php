@@ -7,14 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Kela extends Model
 {
     protected $table = 'kelas';
-    protected $guarded = [];
+    protected $fillable = ['nama','user_id', 'keahlian'];
 
-    public function wala()
+    public function user()
     {
-        return $this->belongsTo(Wala::class);
+        return $this->belongsTo(User::class);
     }
     public function jadwals()
     {
         return $this->hasMany(Jadwal::class);
     }
+
 }

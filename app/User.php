@@ -51,4 +51,17 @@ class User extends Authenticatable
     {
         return $this->hasMany(Absensi::class);
     }
+    public function jadwals()
+    {
+        return $this->hasMany(Jadwal::class);
+    }
+    public function walas()
+    {
+        return $this->hasMany(Wala::class);
+    }
+    public function kelas()
+    {
+        return $this->hasMany(Kela::class);
+    }
+
 }

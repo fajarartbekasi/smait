@@ -51,6 +51,7 @@
                             @endforelse
                             </tbody>
                         </table>
+                        {{$mapels->links()}}
                     </div>
                 </div>
             </div>

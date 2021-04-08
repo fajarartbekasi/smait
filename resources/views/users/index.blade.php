@@ -25,7 +25,11 @@
                             <tbody>
                                 @forelse($users as $user)
                                     <tr>
-                                        <td>{{$user->name}}</td>
+                                        <td>
+                                            <a href="{{route('ambil-form-edit.user',$user->id)}}">
+                                                {{$user->name}}
+                                            </a>
+                                        </td>
                                         <td>{{$user->email}}</td>
                                         <td>{{$user->roles->implode('name',',')}}</td>
                                         <td>
@@ -44,6 +48,8 @@
                                 @endforelse
                             </tbody>
                         </table>
+
+                        {{$users->links()}}
                     </div>
                 </div>
             </div>

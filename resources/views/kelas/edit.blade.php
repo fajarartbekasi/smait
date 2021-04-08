@@ -11,8 +11,9 @@
                         <h5 class="font-weight-bold">Perhatian !!!</h5>
                         <h5>Silahkan masukan data kelas dengan benar</h5>
                     </div>
-                    <form action="{{route('simpan-data.kelas')}}" method="post">
+                    <form action="{{route('update.kelas', $kelas->id)}}" method="post">
                         @csrf
+                        @method('PATCH')
                         @if(session('success'))
                             <div class="alert alert-success">
                                 {{ session('success')}}
@@ -20,7 +21,7 @@
                         @endif
                         <div class="form-group">
                             <label for="nama">Nama Kelas</label>
-                            <input type="text" name="nama" id="" class="form-control" placeholder="Nama Pelajaran">
+                            <input type="text" name="nama" id="" value="{{$kelas->nama}}" class="form-control" placeholder="Nama Pelajaran">
                         </div>
                         <div class="form-group">
                             <label for="">Pilih paket keahlian</label>
@@ -35,7 +36,7 @@
                             <select name="user_id" class="form-control" id="">
                                 <option value="">Pilih walikelas</option>
                                 @foreach($walas  as $get)
-                                    <option value="{{$get->user_id}}">{{$get->user->name}}</option>
+                                    <option value="{{$get->id}}">{{$get->name}}</option>
                                 @endforeach
                             </select>
                         </div>

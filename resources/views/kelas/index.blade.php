@@ -29,11 +29,11 @@
                             </thead>
 
                             <tbody>
-                                @forelse($kelas as $kela)
+                                @forelse($walas as $kela)
                                     <tr>
                                         <td>{{$kela->nama}}</td>
                                         <td>{{$kela->keahlian}}</td>
-                                        <td>{{$kela->wala->user->name}}</td>
+                                        <td>{{$kela->user->name}}</td>
                                         <td>
                                             <form action="{{route('destroy.kelas', $kela->id)}}" method="post">
                                                 @csrf
@@ -45,7 +45,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="3" class="text-center">
+                                        <td colspan="4" class="text-center">
                                             Maaf data ruang untuk saat ini belum tersedia.
                                         </td>
                                     </tr>

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Kela;
+use App\Mapel;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +27,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = [
+            'siswas'    => User::whereHas('roles', function($role){
+                                    $role->where('roles.name','=','siswa');
+                            })->count(),
+            'gurus'     => User::whereHas('roles', function($role){
+                                    $role->where('roles.name','=','guru');
+                            })->count(),
+            'walas'     => User::whereHas('roles', function($role){
+                                    $role->where('roles.name','=','walas');
+                            })->count(),
+            'kelas'     => Kela::count(),
+            'mapels'    => Mapel::count(),
+            'students'  => User::whereHas('roles', function($role){
+                                    $role->where('roles.name','=','siswa');
+                            })->paginate(5),
+    ];
+        return view('home', $data);
     }
 }

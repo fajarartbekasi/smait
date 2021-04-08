@@ -29,6 +29,34 @@ class UsersTableSeeder extends Seeder
         $this->command->warn($ketua->email);
         $this->command->warn('Password is "laravel"');
 
+        // Walas
+        $walas = factory(User::class)->create([
+            'name'     => 'Walas',
+            'email'    => 'walas@thoriqbinziyad.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('laravel'),
+        ]);
+
+        if($walas->save()){
+
+            $teacher = Guru::create([
+                'user_id'   => $walas->id,
+            ]);
+            if ($teacher->save()) {
+                    $walasprofile = Wala::create([
+                    'user_id'   => $teacher->user_id,
+                    'guru_id'   => $teacher->id,
+                ]);
+            }
+
+        }
+
+        $walas->assignRole('walas');
+
+        $this->command->info('>_ Here is your guru details to login:');
+        $this->command->warn($walas->email);
+        $this->command->warn('Password is "laravel"');
+
         // Guru
         $guru = factory(User::class)->create([
             'name'     => 'Guru',
@@ -48,26 +76,6 @@ class UsersTableSeeder extends Seeder
 
         $this->command->info('>_ Here is your guru details to login:');
         $this->command->warn($guru->email);
-        $this->command->warn('Password is "laravel"');
-
-        // Walas
-        $walas = factory(User::class)->create([
-            'name'     => 'Walas',
-            'email'    => 'walas@thoriqbinziyad.com',
-            'email_verified_at' => now(),
-            'password' => bcrypt('laravel'),
-        ]);
-
-        if($walas->save()){
-
-            $guruprofile = Wala::create([
-                'user_id'   => $walas->id,
-            ]);
-        }
-        $walas->assignRole('walas');
-
-        $this->command->info('>_ Here is your walas details to login:');
-        $this->command->warn($walas->email);
         $this->command->warn('Password is "laravel"');
 
         // Siswa

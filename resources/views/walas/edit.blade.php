@@ -12,19 +12,21 @@
                         <h5>Silahkan masukan nama guru yang akan menjadi walas</h5>
                     </div>
 
-                    <form action="{{route('update.walas', $user->id)}}" method="post">
+                    <form action="{{route('update.perwalian', $user->id)}}" method="post">
                         @csrf
                         @method('PATCH')
+
                         <div class="form-group">
                             <label for="">Pilih Nama Guru</label>
-                            <select name="guru_id" id="" class="form-control">
-                                <option value="">Nama Guru</option>
-
-                                @foreach($gurus as $guru)
-                                <option value="{{$guru->id}}">{{$guru->name}}</option>
-                                @endforeach
-                            </select>
-
+                            <input type="text" class="form-control" value="{{$user->user->name}}"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Masukan nama kelas</label>
+                            <input type="text" name="nama" id="" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Jurusan</label>
+                            <input type="text" name="keahlian" id="" class="form-control">
                         </div>
                         <div class="row col-md-12">
                             <button type="submit" class="btn btn-info">Tambah Walas</button>

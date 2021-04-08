@@ -18,9 +18,5 @@ class Wala extends Model
     {
         return $this->belongsTo(Guru::class);
     }
-    public function kelas()
-    {
-        return $this->hasMany(Kela::class);
-    }
 
 }

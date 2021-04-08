@@ -9,10 +9,16 @@
                 <div class="alert alert-info" style="margin-top: -40px;">
                     Silahkan masukan informasi dibawah ini dengan benar dan lengkap.
                 </div>
+                @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success')}}
+                </div>
+            @endif
             </div>
             <form action="{{route('simpan-data.invitation')}}" method="post">
                 @csrf
                 <div class="row">
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Nama</label>
