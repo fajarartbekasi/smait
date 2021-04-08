@@ -69,6 +69,7 @@ Route::group(['prefix' => 'simpan-data'], function(){
     route::post('jadwal','JadwalController@store')->name('simpan-data.jadwal');
     route::post('absensi-guru','AbsenController@store')->name('simpan-data.absensi-guru');
     route::post('absensi-siswa','AbsensisiswaController@store')->name('simpan-data.absensi-siswa');
+    route::post('predikat','PredikatController@store')->name('simpan-data.predikat');
 });
 
 /**

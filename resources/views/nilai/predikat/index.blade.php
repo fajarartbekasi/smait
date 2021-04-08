@@ -11,6 +11,11 @@
                         <h5 class="font-weight bold">Perhatian !!!</h5>
                         <h5>Data nilai ini merupakan inputan berasal dari guru.</h5>
                     </div>
+                    <div class="pt-3 mb-3">
+                        <a class="btn btn-info" href="{{ route('buat-form.predikat') }}">
+                            Predikat
+                        </a>
+                    </div>
                     <div class="table table-responsive">
                         <table class="table table-striped">
                             <thead>

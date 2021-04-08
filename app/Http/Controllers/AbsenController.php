@@ -11,9 +11,7 @@ class AbsenController extends Controller
     public function index()
     {
 
-        $absensis = User::with('absensis')->whereHas('roles', function($role){
-                $role->where('roles.name','=','guru');
-        })->paginate(5);
+        $absensis = Absensi::with('user')->paginate(5);
 
         return view('absensi.index', compact('absensis'));
     }

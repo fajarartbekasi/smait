@@ -112,7 +112,7 @@
                                 </div>
                             </li>
                         @endrole
-                        @role('guru')
+                        @role('guru|walas')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('buat-form.absensi-guru') }}">Absensi</a>
                             </li>
@@ -123,9 +123,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('buat-form.predikat') }}">
-                                        Predikat
-                                    </a>
+
                                     <a href="{{route('ambil-data.ulangan.siswa')}}" class="dropdown-item">
                                        Nilai Ulangan
                                     </a>
