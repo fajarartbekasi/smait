@@ -84,6 +84,7 @@ Route::group(['[prefix' => 'ambil-form-edit'], function(){
     route::get('kelas/{kela}','KelasController@edit')->name('ambil-form-edit.kelas');
     route::get('jadwal/{jadwal}','JadwalController@edit')->name('ambil-form-edit.jadwal');
     route::get('user/{user}','InvitationController@edit')->name('ambil-form-edit.user');
+    route::get('predikat/{predikat}','PredikatController@edit')->name('ambil-form-edit.predikat');
 });
 
 /**
@@ -98,6 +99,7 @@ Route::group(['prefix' => 'update'], function(){
     route::patch('jadwal/{jadwal}', 'JadwalController@update')->name('update.jadwal');
     route::patch('user/{user}', 'InvitationController@update')->name('update.user');
     route::patch('kelas/{kela}', 'KelasController@update')->name('update.kelas');
+    route::patch('predikat/{predikat}', 'PredikatController@update')->name('update.predikat');
 });
 
 /**

@@ -35,7 +35,11 @@
                             <tbody>
                                 @foreach($predikats as $predikat)
                                 <tr>
-                                    <td class="text-center">{{$predikat->mapel->nama}}</td>
+                                    <td class="text-center">
+                                        <a href="{{route('ambil-form-edit.predikat', $predikat->id)}}" class="btn btn-outline-info btn-sm">
+                                            {{$predikat->mapel->nama}}
+                                        </a>
+                                    </td>
                                     <td class="text-center">{{$predikat->kkm}}</td>
                                     <td class="text-center">{{$predikat->grade_a}}</td>
                                     <td class="text-center">{{$predikat->grade_b}}</td>
