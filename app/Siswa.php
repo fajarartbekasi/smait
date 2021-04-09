@@ -13,4 +13,8 @@ class Siswa extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function kela()
+    {
+       return $this->belongsTo(Kela::class);
+    }
 }

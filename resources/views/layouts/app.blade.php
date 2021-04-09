@@ -86,29 +86,17 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('ambil-data.ulangan') }}">
-                                    Nilai Ulangan
+                                        Nilai Ulangan
                                     </a>
                                     <a class="dropdown-item" href="{{ route('ambil-data.sikap') }}">
-                                    Nilai Sikap
+                                        Nilai Sikap
                                     </a>
                                     <a class="dropdown-item" href="{{ route('ambil-data.kelas') }}">
-                                    Nilai Raport
+                                        Nilai Raport
                                     </a>
                                     <a class="dropdown-item" href="{{ route('ambil-data.predikat') }}">
-                                    Deskripsi Predikat
+                                        Deskripsi Predikat
                                     </a>
-                                    <!-- role guru -->
-                                    @role('guru')
-                                        <a class="dropdown-item" href="{{ route('buat-form.predikat') }}">
-                                        Input Predikat
-                                        </a>
-                                        <a href="{{route('ambil-data.ulangan.siswa')}}" class="dropdown-item">
-                                            Input Nilai Ulangan
-                                        </a>
-                                        <a href="{{route('ambil-data.raport.siswa')}}" class="dropdown-item">
-                                            Input Nilai Raport
-                                        </a>
-                                    @endrole
                                 </div>
                             </li>
                         @endrole
@@ -123,7 +111,6 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
                                     <a href="{{route('ambil-data.ulangan.siswa')}}" class="dropdown-item">
                                        Nilai Ulangan
                                     </a>

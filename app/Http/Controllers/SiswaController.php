@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Siswa;
+use App\Kela;
 use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,12 @@ class SiswaController extends Controller
     {
         $user = User::findOrFail($id);
 
-        return view('students.create', compact('user'));
+        $data = [
+            'user'     => User::findOrFail($id),
+            'kelas'     => Kela::all(),
+        ];
+
+        return view('students.create', $data);
     }
     public function update(Request $request, $id)
     {
@@ -37,6 +43,7 @@ class SiswaController extends Controller
         $siswa->nisn          = $request->input('nisn');
         $siswa->gender        = $request->input('gender');
         $siswa->alamat        = $request->input('alamat');
+        $siswa->kela_id       = $request->input('kela_id');
 
         $siswa->save();
 

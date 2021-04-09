@@ -38,7 +38,8 @@
                                             <form action="{{route('destroy.kelas', $kela->id)}}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="{{route('ambil-form-edit.kelas', $kela->id)}}" class="btn btn-outline-warning btn-sm">Edit</a>
+                                                <a href="{{route('lihat.detail.kelas', $kela->id)}}" class="btn btn-outline-info btn-sm">Detail Kelas</a>
+                                                <a href="{{route('ambil-form-edit.kelas', $kela->id)}}" class="btn btn-outline-warning btn-sm">Edit kelas</a>
                                                 <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
                                             </form>
                                         </td>

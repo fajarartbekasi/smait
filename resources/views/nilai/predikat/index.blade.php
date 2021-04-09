@@ -7,11 +7,8 @@
         <div class="col-md-12">
             <div class="card border-0">
                 <div class="card-body">
-                    <div class="alert alert-info">
-                        <h5 class="font-weight bold">Perhatian !!!</h5>
-                        <h5>Data nilai ini merupakan inputan berasal dari guru.</h5>
-                    </div>
-                    <div class="pt-3 mb-3">
+
+                    <div class="mb-3">
                         <a class="btn btn-info" href="{{ route('buat-form.predikat') }}">
                             Predikat
                         </a>

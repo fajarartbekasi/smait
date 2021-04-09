@@ -51,10 +51,21 @@
                                 </div>
 
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="alamat">Alamat</label>
                                         <textarea name="alamat" id="" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="alamat">Pilih Kelas</label>
+                                        <select name="kela_id" id="" class="form-control">
+                                                <option value="">Pilih Kelas</option>
+                                            @foreach($kelas as $kela)
+                                                <option value="{{$kela->id}}"> {{$kela->nama}} </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">

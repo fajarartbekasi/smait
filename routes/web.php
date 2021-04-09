@@ -119,4 +119,6 @@ Route::group(['prefix'=>'destroy'], function(){
  */
 Route::group(['prefix'=>'lihat'], function(){
     route::get('jadwal/{jadwal}', 'JadwalController@show')->name('lihat.jadwal');
+
+    route::get('detail/kelas/{kela}', 'KelasController@show')->name('lihat.detail.kelas');
 });

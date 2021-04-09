@@ -16,6 +16,8 @@ class CreateNilaisTable extends Migration
         Schema::create('nilais', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('siswa_id');
+            $table->unsignedInteger('mapel_id');
+            $table->unsignedInteger('kela_id');
             $table->string('nilai');
             $table->timestamps();
         });

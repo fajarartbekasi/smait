@@ -7,6 +7,7 @@ use App\User;
 use App\Kela;
 use App\Guru;
 use App\Role;
+use App\siswa;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
@@ -61,6 +62,14 @@ class KelasController extends Controller
         $kelas->save();
 
         return redirect()->back()->with(['success'=>'kelas berhasil di perbarui']);
+    }
+    public function show($id)
+    {
+        $kelas = Kela::findOrFail($id);
+
+        $siswas = Siswa::with('kela')->where('kela_id', $id)->get();
+
+        return view('kelas.show', compact('kelas', 'siswas'));
     }
     public function destroy($id)
     {

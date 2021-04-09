@@ -17,5 +17,9 @@ class Kela extends Model
     {
         return $this->hasMany(Jadwal::class);
     }
+    public function siswas()
+    {
+        return $this->hasMany(Siswa::class);
+    }
 
 }
