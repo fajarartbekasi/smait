@@ -13,7 +13,10 @@ class PredikatController extends Controller
 
     public function index()
     {
-        return view('nilai.predikat.index');
+        $predikats = Predikat::with('mapel','guru')->get();
+
+
+        return view('nilai.predikat.index', compact('predikats'));
     }
     public function create()
     {

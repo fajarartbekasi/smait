@@ -20,30 +20,29 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <td>Kode Mapel</td>
-                                    <td>Mapel</td>
-                                        <td rowspan="2" class="text-center">KKM</td>
-                                        <td colspan="4" class="text-center">Little</td>
+                                    <td class="text-center">Mapel</td>
+                                    <td rowspan="2" class="text-center">KKM</td>
+                                    <td colspan="4" class="text-center">Grade</td>
                                 </tr>
                                 <tr>
                                     <td class="border-0"></td>
-                                    <td class="border-0"></td>
-                                    <td>Little</td>
-                                    <td>Piggy</td>
-                                    <td>Went</td>
-                                    <td>To</td>
+                                    <td class="text-center">A</td>
+                                    <td class="text-center">B</td>
+                                    <td class="text-center">C</td>
+                                    <td class="text-center">To</td>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($predikats as $predikat)
                                 <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">1</td>
+                                    <td class="text-center">{{$predikat->mapel->nama}}</td>
+                                    <td class="text-center">{{$predikat->kkm}}</td>
+                                    <td class="text-center">{{$predikat->grade_a}}</td>
+                                    <td class="text-center">{{$predikat->grade_b}}</td>
+                                    <td class="text-center">{{$predikat->grade_c}}</td>
+                                    <td class="text-center">{{$predikat->grade_d}}</td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
