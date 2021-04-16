@@ -28,6 +28,7 @@
                                 <tr>
 
                                     <form action="" method="post">
+                                        @csrf
                                         <td>
                                             <input type="text" name="ulh_1" id="" class="form-control" value="John Doe" readonly>
                                         </td>
@@ -39,7 +40,7 @@
                                         <td><input type="text" name="ulh_1" id="" class="form-control"></td>
                                         <td><input type="text" name="ulh_1" id="" class="form-control"></td>
                                         <td>
-                                            <a href="{{route('buat-form.entry-nilai')}}" class="btn btn-info btn-sm">save</a>
+                                            <button type="submit" class="btn btn-info btn-sm">save</button>
                                         </td>
                                     </form>
                                 </tr>

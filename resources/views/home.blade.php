@@ -80,4 +80,82 @@
         </div>
     </div>
 @endrole
+@role('guru|walas')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <div class="card border-0">
+                    <div class="card-body d-flex justify-content-between">
+                        <div>
+                             <h5>Jumlah Siswa</h5>
+                             <h6>yang diajar</h6>
+                        </div>
+
+                        <h1 class="font-weight-bolder">50</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-2">
+                <div class="card border-0">
+                    <div class="card-body d-flex justify-content-between">
+                        <div>
+                             <h5>Jumlah Kelas</h5>
+                             <h6>yang diajar</h6>
+                        </div>
+
+                        <h1 class="font-weight-bolder">50</h1>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-md-12">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h3 class="">Jadwal Mengajar</h3>
+                            <div class="table table-responsive pt-3">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Kelas</th>
+                                            <th>Hari</th>
+                                            <th>
+                                                Mapel
+                                            </th>
+                                            <th>
+                                                Jam Awal
+                                            </th>
+                                            <th>
+                                                Jam Akhir
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse($jadwals as $jadwal)
+                                            <tr>
+                                                <td >
+                                                    <a href="{{route('lihat.detail.jadwal', $jadwal->id)}}" class="btn btn-outline-info btn-sm">
+                                                        {{$jadwal->kela->nama}} {{$jadwal->kela->keahlian}}</td>
+                                                    </a>
+                                                <td>{{$jadwal->hari}}</td>
+                                                <td>{{$jadwal->mapel->nama}}</td>
+                                                <td>
+                                                    {{$jadwal->jam_awal}}
+                                                </td>
+                                                <td>
+                                                    {{$jadwal->jam_akhir}}
+                                                </td>
+                                            </tr>
+
+                                            @empty
+
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+@endrole
 @endsection

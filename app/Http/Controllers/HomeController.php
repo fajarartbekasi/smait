@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Kela;
 use App\Mapel;
+use App\Jadwal;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,6 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $data = [
             'siswas'    => User::whereHas('roles', function($role){
                                     $role->where('roles.name','=','siswa');
@@ -42,7 +45,12 @@ class HomeController extends Controller
             'students'  => User::whereHas('roles', function($role){
                                     $role->where('roles.name','=','siswa');
                             })->paginate(5),
-    ];
+            'jadwals'   => Jadwal::with('user','mapel','kela')
+                                   ->where('user_id', Auth::user()->id)
+                                   ->get(),
+         ];
+
         return view('home', $data);
+
     }
 }

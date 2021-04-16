@@ -6,6 +6,7 @@ use App\Jurusan;
 use App\Kela;
 use App\Mapel;
 use App\Jadwal;
+use App\User;
 use Illuminate\Http\Request;
 
 class JadwalController extends Controller
@@ -24,6 +25,9 @@ class JadwalController extends Controller
         $data = [
             'mapels'   => Mapel::all(),
             'kelas'    => Kela::all(),
+            'users'    => User::whereHas('roles', function($role){
+                                    $role->where('roles.name','=','guru');
+                            })->get(),
         ];
         return view('jadwals.create', $data);
     }
@@ -44,6 +48,7 @@ class JadwalController extends Controller
         $jadwal->jam_akhir  = $request->input('jam_akhir');
         $jadwal->mapel_id   = $request->input('mapel_id');
         $jadwal->kela_id    = $request->input('kela_id');
+        $jadwal->user_id    = $request->input('user_id');
 
         $jadwal->save();
 
@@ -66,12 +71,14 @@ class JadwalController extends Controller
             'jam_akhir'      => 'required',
             'mapel_id'       => 'required',
             'kela_id'        => 'required',
+            'user_id'        => 'required',
         ]);
 
         $jadwal = Jadwal::create([
+            'user_id'       => $request->input('user_id'),
             'hari'          => $request->input('hari'),
             'jam_awal'      => $request->input('jam_awal'),
-            'jam_akhir'      => $request->input('jam_akhir'),
+            'jam_akhir'     => $request->input('jam_akhir'),
             'mapel_id'      => $request->input('mapel_id'),
             'kela_id'       => $request->input('kela_id'),
         ]);

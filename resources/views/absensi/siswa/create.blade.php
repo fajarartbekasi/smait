@@ -13,11 +13,11 @@
                     </div>
                     <div class="form-group">
                         <label for="">Nama Siswa</label>
-                        <input type="text" name="" value="{{Auth::user()->name}}" id="" readonly class="form-control">
+                        <input type="text" name="" value="{{$siswa->user->name}}" id="" readonly class="form-control">
                     </div>
-                    <form action="{{route('simpan-data.absensi-siswa')}}" method="post">
+                    <form action="{{route('simpan-data.absensi-siswa', $siswa->id)}}" method="post">
                         @csrf
-                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}" id="" readonly class="form-control">
+                        <input type="hidden" name="user_id" value="{{$siswa->id}}" id="" readonly class="form-control">
                         <div class="form-group">
                             <label for="">Keterangan</label>
                             <select name="absen" class="form-control" id="">
@@ -30,6 +30,7 @@
                         </div>
                         <div class="mb-3">
                             <button type="submit" class="btn btn-info">Absen</button>
+                            <a href="{{route('home')}}" class="btn btn-secondary">cancel</a>
                         </div>
                     </form>
                 </div>

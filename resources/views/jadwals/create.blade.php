@@ -42,6 +42,17 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    <label for="">Pilih Guru</label>
+                                    <select name="user_id" id="" class="form-control">
+                                        <option value="">Pilih Guru</option>
+                                        @foreach($users as $user)
+                                            <option value="{{$user->id}}">{{$user->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
                                     <label for="">Pilih Mapel</label>
                                     <select name="mapel_id" id="" class="form-control">
                                         <option value="">Pilih mapel</option>

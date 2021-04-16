@@ -55,7 +55,6 @@ Route::group(['prefix'=> 'buat-form'], function(){
 
 
     route::get('absensi-guru','AbsenController@create')->name('buat-form.absensi-guru');
-    route::get('absensi-siswa','AbsensisiswaController@create')->name('buat-form.absensi-siswa');
 });
 
 /**
@@ -68,7 +67,7 @@ Route::group(['prefix' => 'simpan-data'], function(){
     route::post('kelas','KelasController@store')->name('simpan-data.kelas');
     route::post('jadwal','JadwalController@store')->name('simpan-data.jadwal');
     route::post('absensi-guru','AbsenController@store')->name('simpan-data.absensi-guru');
-    route::post('absensi-siswa','AbsensisiswaController@store')->name('simpan-data.absensi-siswa');
+    route::post('absensi-siswa/{siswa}','AbsensisiswaController@store')->name('simpan-data.absensi-siswa');
     route::post('predikat','PredikatController@store')->name('simpan-data.predikat');
 });
 
@@ -85,6 +84,7 @@ Route::group(['[prefix' => 'ambil-form-edit'], function(){
     route::get('jadwal/{jadwal}','JadwalController@edit')->name('ambil-form-edit.jadwal');
     route::get('user/{user}','InvitationController@edit')->name('ambil-form-edit.user');
     route::get('predikat/{predikat}','PredikatController@edit')->name('ambil-form-edit.predikat');
+    route::get('absensi-siswa/{siswa}','AbsensisiswaController@create')->name('ambil-form-edit.absensi-siswa');
 });
 
 /**
@@ -121,4 +121,6 @@ Route::group(['prefix'=>'lihat'], function(){
     route::get('jadwal/{jadwal}', 'JadwalController@show')->name('lihat.jadwal');
 
     route::get('detail/kelas/{kela}', 'KelasController@show')->name('lihat.detail.kelas');
+
+    route::get('detail/jadwal/{jadwal}','ScheduleController@show')->name('lihat.detail.jadwal');
 });
