@@ -122,7 +122,7 @@
                         @endrole
                         @role('siswa')
                             <li class="nav-item">
-                                <a class="nav-link" href="">Absensi</a>
+                                <a class="nav-link" href="{{ route('cek.absensi') }}">Absensi</a>
                             </li>
                         @endrole
                     </ul>

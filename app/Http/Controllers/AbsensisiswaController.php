@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class AbsensisiswaController extends Controller
 {
+
     public function create($id)
     {
         $siswa = User::findOrFail($id);

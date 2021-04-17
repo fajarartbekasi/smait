@@ -125,3 +125,10 @@ Route::group(['prefix'=>'lihat'], function(){
     route::get('detail/jadwal/{jadwal}','ScheduleController@show')->name('lihat.detail.jadwal');
     route::get('detail/schedule/{kela}','Siswa\ScheduleController@show')->name('lihat.detail.schedule');
 });
+
+/**
+ * route untuk siswa
+ */
+Route::group(['prefix' => 'cek'], function(){
+    route::get('absensi', 'Siswa\AbsensiController@index')->name('cek.absensi');
+});
