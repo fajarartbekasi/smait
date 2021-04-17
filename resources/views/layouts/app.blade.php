@@ -122,7 +122,7 @@
                         @endrole
                         @role('siswa')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('buat-form.absensi-siswa') }}">Absensi</a>
+                                <a class="nav-link" href="">Absensi</a>
                             </li>
                         @endrole
                     </ul>

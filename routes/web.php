@@ -67,7 +67,7 @@ Route::group(['prefix' => 'simpan-data'], function(){
     route::post('kelas','KelasController@store')->name('simpan-data.kelas');
     route::post('jadwal','JadwalController@store')->name('simpan-data.jadwal');
     route::post('absensi-guru','AbsenController@store')->name('simpan-data.absensi-guru');
-    route::post('absensi-siswa/{siswa}','AbsensisiswaController@store')->name('simpan-data.absensi-siswa');
+    route::post('absensi-siswa/{user}','AbsensisiswaController@store')->name('simpan-data.absensi-siswa');
     route::post('predikat','PredikatController@store')->name('simpan-data.predikat');
 });
 
@@ -123,4 +123,5 @@ Route::group(['prefix'=>'lihat'], function(){
     route::get('detail/kelas/{kela}', 'KelasController@show')->name('lihat.detail.kelas');
 
     route::get('detail/jadwal/{jadwal}','ScheduleController@show')->name('lihat.detail.jadwal');
+    route::get('detail/schedule/{kela}','Siswa\ScheduleController@show')->name('lihat.detail.schedule');
 });

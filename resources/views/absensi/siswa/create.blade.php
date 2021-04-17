@@ -13,7 +13,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Nama Siswa</label>
-                        <input type="text" name="" value="{{$siswa->user->name}}" id="" readonly class="form-control">
+                        <input type="text" name="" value="{{$siswa->name}}" id="" readonly class="form-control">
                     </div>
                     <form action="{{route('simpan-data.absensi-siswa', $siswa->id)}}" method="post">
                         @csrf

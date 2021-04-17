@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Siswa;
+use App\User;
 use App\Absensi;
 use Illuminate\Http\Request;
 
@@ -10,13 +11,13 @@ class AbsensisiswaController extends Controller
 {
     public function create($id)
     {
-        $siswa = Siswa::findOrFail($id);
+        $siswa = User::findOrFail($id);
 
         return view('absensi.siswa.create', compact('siswa'));
     }
     public function store(Request $request, $id)
     {
-        $siswa = Siswa::findOrFail($id);
+        $siswa = User::findOrFail($id);
 
         $this->validate($request,[
             'user_id'   => 'required',

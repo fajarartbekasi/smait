@@ -6,6 +6,7 @@ use App\User;
 use App\Kela;
 use App\Mapel;
 use App\Jadwal;
+use App\Siswa;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -45,9 +46,12 @@ class HomeController extends Controller
             'students'  => User::whereHas('roles', function($role){
                                     $role->where('roles.name','=','siswa');
                             })->paginate(5),
-            'jadwals'   => Jadwal::with('user','mapel','kela')
-                                   ->where('user_id', Auth::user()->id)
-                                   ->get(),
+            'jadwals'   => Kela::whereHas('jadwals', function($role){
+                                    $role->where('jadwals.user_id','=',Auth::user()->id);
+                            })->get(),
+            'schedules' => Kela::whereHas('siswas', function($role){
+                                    $role->where('siswas.user_id','=',Auth::user()->id);
+                            })->paginate(1)
          ];
 
         return view('home', $data);

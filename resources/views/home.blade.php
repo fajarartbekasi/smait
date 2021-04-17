@@ -110,51 +110,89 @@
 
                 <div class="col-md-12">
                     <div class="card border-0">
-                        <div class="card-body">
-                            <h3 class="">Jadwal Mengajar</h3>
-                            <div class="table table-responsive pt-3">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Kelas</th>
-                                            <th>Hari</th>
-                                            <th>
-                                                Mapel
-                                            </th>
-                                            <th>
-                                                Jam Awal
-                                            </th>
-                                            <th>
-                                                Jam Akhir
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @forelse($jadwals as $jadwal)
+                        @foreach($jadwals as $jadwal)
+                            <div class="card-body">
+                                <h3 class="">Jadwal Mengajar</h3>
+                                <h3 class="">
+
+                                        {{$jadwal->nama}}
+                                </h3>
+                                <div class="table table-responsive pt-3">
+                                    <table class="table table-striped">
+                                        <thead>
                                             <tr>
-                                                <td >
-                                                    <a href="{{route('lihat.detail.jadwal', $jadwal->id)}}" class="btn btn-outline-info btn-sm">
-                                                        {{$jadwal->kela->nama}} {{$jadwal->kela->keahlian}}</td>
-                                                    </a>
-                                                <td>{{$jadwal->hari}}</td>
-                                                <td>{{$jadwal->mapel->nama}}</td>
-                                                <td>
-                                                    {{$jadwal->jam_awal}}
-                                                </td>
-                                                <td>
-                                                    {{$jadwal->jam_akhir}}
-                                                </td>
+                                                <th>Hari</th>
+                                                <th>
+                                                    Mapel
+                                                </th>
+                                                <th>
+                                                    Jam Awal
+                                                </th>
+                                                <th>
+                                                    Jam Akhir
+                                                </th>
                                             </tr>
-
-                                            @empty
-
-                                        @endforelse
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($jadwal->jadwals as $mapel)
+                                                <tr>
+                                                    <td>{{$mapel->hari}}</td>
+                                                    <td>
+                                                        <a href="{{route('lihat.detail.jadwal', $mapel->mapel_id)}}" class="btn btn-outline-info btn-sm">
+                                                            {{$mapel->mapel->nama}}
+                                                        </a>
+                                                    </td>
+                                                    <td>{{$mapel->jam_awal}}</td>
+                                                    <td>{{$mapel->jam_akhir}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
+        </div>
+    </div>
+@endrole
+@role('siswa')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card border-0">
+                    <div class="card-body">
+
+                        @foreach($schedules as $schedule)
+                            <div class="mt-3 mb-3">
+                                <h3>Jadwal Pelajaran </h3>
+                                <h3>{{$schedule->nama}} - {{$schedule->keahlian}}</h3>
+                            </div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Hari</th>
+                                        <th>Nama Pelajaran</th>
+                                        <th>Jam Awal</th>
+                                        <th>Jam Akhir</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($schedule->jadwals as $get)
+                                    <tr>
+                                        <td>{{$get->hari}}</td>
+                                        <td>{{$get->mapel->nama}}</td>
+                                        <td>{{$get->jam_awal}}</td>
+                                        <td>{{$get->jam_akhir}}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        @endforeach
+                        {{$schedules->links()}}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endrole

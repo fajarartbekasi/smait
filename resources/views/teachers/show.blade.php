@@ -30,7 +30,7 @@
                             @forelse($siswas as $siswa)
                                 <tr>
                                     <td>
-                                        <a href="{{route('ambil-form-edit.absensi-siswa', $siswa->id)}}">
+                                        <a href="{{route('ambil-form-edit.absensi-siswa', $siswa->user_id)}}">
                                             {{$siswa->user->name}}
                                         </a>
                                     </td>
