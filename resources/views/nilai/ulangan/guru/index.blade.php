@@ -20,12 +20,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <a href="{{route('buat-form.entry-nilai')}}" class="btn btn-info btn-sm">Entry Nilai</a>
-                                    </td>
-                                </tr>
+                                @foreach($kelas as $kela)
+                                    <tr>
+                                        <td>{{$kela->nama}} - {{$kela->keahlian}}</td>
+                                        <td>
+                                            <a href="{{route('lihat.detail.entry-siswa', $kela->id)}}" class="btn btn-info btn-sm">Entry Nilai</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

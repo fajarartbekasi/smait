@@ -63,5 +63,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Kela::class);
     }
+    public function ulangans()
+    {
+        return $this->hasMany(Ulangan::class);
+    }
 
 }

@@ -51,7 +51,7 @@ Route::group(['prefix'=> 'buat-form'], function(){
 
     route::get('jadwal','JadwalController@create')->name('buat-form.jadwal');
     route::get('predikat', 'PredikatController@create')->name('buat-form.predikat');
-    route::get('entry-nilai', 'Nilai\UlanganController@create')->name('buat-form.entry-nilai');
+    route::get('nilai/{siswa} ', 'Nilai\UlanganController@create')->name('buat-form.nilai');
 
 
     route::get('absensi-guru','AbsenController@create')->name('buat-form.absensi-guru');
@@ -69,6 +69,7 @@ Route::group(['prefix' => 'simpan-data'], function(){
     route::post('absensi-guru','AbsenController@store')->name('simpan-data.absensi-guru');
     route::post('absensi-siswa/{user}','AbsensisiswaController@store')->name('simpan-data.absensi-siswa');
     route::post('predikat','PredikatController@store')->name('simpan-data.predikat');
+    route::post('ulangan/{siswa}','Nilai\UlanganController@store')->name('simpan-data.ulangan');
 });
 
 /**
@@ -124,6 +125,8 @@ Route::group(['prefix'=>'lihat'], function(){
 
     route::get('detail/jadwal/{jadwal}','ScheduleController@show')->name('lihat.detail.jadwal');
     route::get('detail/schedule/{kela}','Siswa\ScheduleController@show')->name('lihat.detail.schedule');
+    route::get('detail/entry-siswa/{kela}','Nilai\UlanganController@show')->name('lihat.detail.entry-siswa');
+    route::get('detail/nilai/{siswa}','Siswa\UlanganController@index')->name('lihat.detail.nilai');
 });
 
 /**
