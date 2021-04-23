@@ -26,7 +26,7 @@ class JadwalController extends Controller
             'mapels'   => Mapel::all(),
             'kelas'    => Kela::all(),
             'users'    => User::whereHas('roles', function($role){
-                                    $role->where('roles.name','=','guru');
+                                    $role->whereNotIn('roles.name', ['siswa','admin']);
                             })->get(),
         ];
         return view('jadwals.create', $data);

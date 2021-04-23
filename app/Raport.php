@@ -7,11 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Raport extends Model
 {
     protected $table = 'raports';
-    protected $fillable = [
-        'user_id','kela_id','guru_id','mapel_id',
-        'p_nilai','p_predikat','p_deskripsi','k_nilai',
-        'k_nilai','k_predikat','k_deskripsi',
-    ];
+    protected $guarded = [];
+
     public function user()
     {
         return $this->belongsTo(User::class);
