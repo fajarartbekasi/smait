@@ -53,7 +53,7 @@ class UlanganController extends Controller
             'uas'       => $request->input('uas'),
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with(['success'=>'Terimakasih telah mengisi nilai ulangan']);
     }
     public function show($id)
     {

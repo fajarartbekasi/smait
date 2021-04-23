@@ -60,7 +60,7 @@ class RaportController extends Controller
             'a'                    => $request->input('a'),
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with(['success'=>'Terimakasih telah mengisi nilai raport']);
 
     }
     public function show($id)

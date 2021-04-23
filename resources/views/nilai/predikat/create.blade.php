@@ -12,6 +12,11 @@
                         <h5 class="font-weight">Perhatian !!!</h5>
                         <h5>Silahkan masukan nilai kkm dengan benar</h5>
                     </div>
+                    @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success')}}
+                    </div>
+                    @endif
                     <form method="post" action="{{route('simpan-data.predikat')}}">
                         @csrf
                         <div class="row">

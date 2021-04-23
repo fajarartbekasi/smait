@@ -12,6 +12,11 @@
                         <h5 class="font-weight-bold">Perhatian !!!</h5>
                         <h5>Silahkan masukan data pelajaran dengan benar</h5>
                     </div>
+                    @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success')}}
+                    </div>
+                    @endif
                     <form action="{{route('simpan-data.jadwal')}}" method="post">
                         @csrf
                         <div class="row">
@@ -31,7 +36,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="">Jam Awal</label>
-                                    <input type="date" name="jam_awal" id="" class="form-control">
+                                    <input type="time" name="jam_awal" id="" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-12">

@@ -22,7 +22,9 @@
                         <thead>
                             <tr>
                                 <th>Nama Siswa</th>
-                                <th colspan="3">Absensi</th>
+                                <th>Mapel</th>
+                                <th>Jam Mulai</th>
+                                <th>Jam Selesai</th>
                             </tr>
                         </thead>
                         <tbody>

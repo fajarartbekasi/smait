@@ -30,12 +30,12 @@
                                             @elseif($absensi->absen == 'Tidak masuk')
                                                 <td class="badge ml-3 mt-2 mb-2 badge-danger">{{$absensi->absen}}</td>
                                             @endif
-                                            <td>{{$absensi->created_at->format('H:i:s')}}</td>
+                                            <td>{{$absensi->created_at}}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
-                                {{$absensis->links()}}
                             </table>
+                            {{$absensis->links()}}
                     </div>
                 </div>
             </div>

@@ -36,7 +36,7 @@
                                         @elseif($absensi->absen == 'Tidak masuk')
                                             <td class="badge badge-danger">{{$absensi->absen}}</td>
                                         @endif
-                                        <td>{{$absensi->created_at->format('H:i:s')}}</td>
+                                        <td>{{$absensi->created_at}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

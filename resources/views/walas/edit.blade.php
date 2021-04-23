@@ -11,7 +11,11 @@
                         <h5 class="font-weight-bold">Perhatian!!</h5>
                         <h5>Silahkan masukan nama guru yang akan menjadi walas</h5>
                     </div>
-
+                    @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success')}}
+                    </div>
+                    @endif
                     <form action="{{route('update.perwalian', $user->id)}}" method="post">
                         @csrf
                         @method('PATCH')

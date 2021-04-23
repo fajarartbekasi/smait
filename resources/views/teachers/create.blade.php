@@ -10,6 +10,11 @@
                         <h5 class="font-weight-bold">Perhatian !!!</h5>
                         <h6>Silahkan masukan data guru dengan benar dan lengkap.</h6>
                     </div>
+                    @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success')}}
+                    </div>
+                    @endif
                     <form action="{{route('update.guru', $teacher->id)}}" method="post">
                         @csrf
 
