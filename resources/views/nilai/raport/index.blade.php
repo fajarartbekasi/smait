@@ -32,6 +32,7 @@
                                         <td>{{$siswa->tempat_lahir}},{{$siswa->tanggal_lahir}}</td>
                                         <td>
                                             <a href="{{route('buat-form.raport', $siswa->id)}}" class="btn btn-info btn-sm">Input Nilai Raport</a>
+                                            <a href="{{route('lihat.detail.nilai.raport', $siswa->id)}}" class="btn btn-info btn-sm">Cek Nilai Raport</a>
                                         </td>
                                     </tr>
                                     @endforeach

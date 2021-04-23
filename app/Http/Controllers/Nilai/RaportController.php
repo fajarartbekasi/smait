@@ -45,7 +45,7 @@ class RaportController extends Controller
         ]);
 
         $raport = Raport::create([
-            'user_id'              => $siswa->id,
+            'user_id'              => $siswa->user_id,
             'kela_id'              => $siswa->kela_id,
             'mapel_id'             => $request->input('mapel_id'),
             'guru_id'              => $request->input('guru_id'),
@@ -62,5 +62,13 @@ class RaportController extends Controller
 
         return redirect()->back();
 
+    }
+    public function show($id)
+    {
+        $raports = Raport::findOrFail($id);
+
+        $nilais = Raport::with('user','mapel','kela','guru')->where('user_id',$raports->user_id)->get();
+
+        return view('nilai.raport.show', compact('raports','nilais'));
     }
 }

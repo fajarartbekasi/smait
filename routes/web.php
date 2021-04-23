@@ -129,6 +129,7 @@ Route::group(['prefix'=>'lihat'], function(){
     route::get('detail/schedule/{kela}','Siswa\ScheduleController@show')->name('lihat.detail.schedule');
     route::get('detail/entry-siswa/{kela}','Nilai\UlanganController@show')->name('lihat.detail.entry-siswa');
     route::get('detail/nilai/{siswa}','Siswa\UlanganController@index')->name('lihat.detail.nilai');
+    route::get('detail/nilai/raport/{siswa}','Nilai\RaportController@show')->name('lihat.detail.nilai.raport');
 });
 
 /**
@@ -136,4 +137,8 @@ Route::group(['prefix'=>'lihat'], function(){
  */
 Route::group(['prefix' => 'cek'], function(){
     route::get('absensi', 'Siswa\AbsensiController@index')->name('cek.absensi');
+});
+
+Route::group(['prefix' => 'cetak'], function(){
+    route::get('raport/{raport}','Cetak\RaportController@show')->name('cetak.raport');
 });
