@@ -76,7 +76,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('ambil-data.absensi') }}">Absensi Guru</a>
+                                <a class="nav-link" href="{{ route('ambil-data.absensi-guru') }}">Absensi Guru</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -100,6 +100,7 @@
                                 </div>
                             </li>
                         @endrole
+
                         @role('guru|walas')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('buat-form.absensi-guru') }}">Absensi</a>
@@ -122,7 +123,7 @@
                         @endrole
                         @role('siswa')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('cek.absensi') }}">Absensi</a>
+                                <a class="nav-link" href="{{ route('cek.absensi', Auth::user()->id) }}">Absensi</a>
                             </li>
                         @endrole
                     </ul>

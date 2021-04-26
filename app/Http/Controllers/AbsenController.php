@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Guru;
 use App\Absensi;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class AbsenController extends Controller
@@ -11,9 +13,9 @@ class AbsenController extends Controller
     public function index()
     {
 
-        $absensis = Absensi::with('user')->paginate(5);
+        $teachers = Absensi::with('guru.user')->whereNotNull('guru_id')->get();
 
-        return view('absensi.index', compact('absensis'));
+        return view('absensi.index', compact('teachers'));
     }
     public function create()
     {
@@ -23,17 +25,17 @@ class AbsenController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'user_id'   => 'required',
+            'guru_id'     => 'required',
             'absen'     => 'required',
         ]);
 
         $absen = Absensi::create([
-            'user_id'   => $request->input('user_id'),
+            'guru_id'   => $request->input('guru_id'),
             'absen'     => $request->input('absen'),
         ]);
 
         return redirect()->back()->with([
-            'success'   => 'terimakasih telah melakukan absen untuk hari ini'
+            'success'   => 'terimakasih telah mengisi absensi guru'
         ]);
     }
 }

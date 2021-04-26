@@ -21,9 +21,9 @@
                         <input type="text" name="" value="{{$siswa->name}}" id="" readonly class="form-control">
                     </div>
 
-                    <form action="{{route('simpan-data.absensi-siswa', $siswa->id)}}" method="post">
+                    <form action="{{route('simpan-data.absensi-siswa')}}" method="post">
                         @csrf
-                        <input type="hidden" name="user_id" value="{{$siswa->id}}" id="" readonly class="form-control">
+                        <input type="hidden" name="siswa_id" value="{{$siswa->id}}" id="" readonly class="form-control">
                         <div class="form-group">
                             <label for="">Keterangan</label>
                             <select name="absen" class="form-control" id="">

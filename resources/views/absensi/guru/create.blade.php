@@ -12,13 +12,18 @@
                         <h4 class="font-wieght-bold">Perhatian</h4>
                         <h4>Silahkan lakukan absen </h4>
                     </div>
+                    @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success')}}
+                    </div>
+                    @endif
                     <div class="form-group">
                         <label for="">Nama Guru</label>
                         <input type="text" name="" value="{{Auth::user()->name}}" id="" readonly class="form-control">
                     </div>
                     <form action="{{route('simpan-data.absensi-guru')}}" method="post">
                         @csrf
-                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}" id="" readonly class="form-control">
+                        <input type="hidden" name="guru_id" value="{{Auth::user()->id}}" id="" readonly class="form-control">
                         <div class="form-group">
                             <label for="">Keterangan</label>
                             <select name="absen" class="form-control" id="">

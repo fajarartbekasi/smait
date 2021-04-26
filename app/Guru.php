@@ -17,4 +17,8 @@ class Guru extends Model
     {
         return $this->hasMany(Wala::class);
     }
+    public function absensis()
+    {
+        return $this->hasMany(Absensi::class);
+    }
 }

@@ -24,10 +24,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($teachers as $teacher)
+                                @forelse($teachers as $teacher)
                                     <tr>
 
-                                        <td>{{$teacher->guru->user->name}}</td>
+                                        <td>{{$teacher->wala->user->name}}</td>
                                         @if($teacher->absen == 'hadir')
                                         <td class="badge badge-info">{{$teacher->absen}}</td>
                                         @elseif($teacher->absen == 'ijin')
@@ -39,7 +39,11 @@
                                         @endif
                                         <td>{{$teacher->created_at}}</td>
                                     </tr>
-                                @endforeach
+                                    @empty
+                                    <tr>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>

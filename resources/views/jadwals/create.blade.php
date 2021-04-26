@@ -75,7 +75,7 @@
                                     <select name="kela_id" id="" class="form-control">
                                         <option value="">*** Kelas ***</option>
                                         @forelse($kelas as $kela)
-                                        <option value="{{$kela->id}}">{{$kela->nama}}</option>
+                                        <option value="{{$kela->id}}">{{$kela->nama}} {{$kela->keahlian}}</option>
                                         @empty
                                         <option value="">
                                             maaf kelas belum tersedia

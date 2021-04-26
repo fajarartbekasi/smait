@@ -32,7 +32,7 @@ Route::group(['prefix' => 'ambil-data'], function(){
     route::get('invitation','InvitationController@index')->name('ambil-data.invitation');
     route::get('walikelas', 'WalasController@index')->name('ambil-data.walikelas');
     route::get('jadwal', 'JadwalController@index')->name('ambil-data.jadwal');
-    route::get('absensi', 'AbsenController@index')->name('ambil-data.absensi');
+    route::get('absensi-guru', 'AbsenController@index')->name('ambil-data.absensi-guru');
     route::get('predikat', 'PredikatController@index')->name('ambil-data.predikat');
     route::get('sikap', 'NilaisikapController@index')->name('ambil-data.sikap');
     route::get('ulangan', 'UlanganController@index')->name('ambil-data.ulangan');
@@ -68,7 +68,8 @@ Route::group(['prefix' => 'simpan-data'], function(){
     route::post('kelas','KelasController@store')->name('simpan-data.kelas');
     route::post('jadwal','JadwalController@store')->name('simpan-data.jadwal');
     route::post('absensi-guru','AbsenController@store')->name('simpan-data.absensi-guru');
-    route::post('absensi-siswa/{user}','AbsensisiswaController@store')->name('simpan-data.absensi-siswa');
+    route::post('absensi-walas','AbsenwalasController@store')->name('simpan-data.absensi-walas');
+    route::post('absensi-siswa','AbsensisiswaController@store')->name('simpan-data.absensi-siswa');
     route::post('predikat','PredikatController@store')->name('simpan-data.predikat');
     route::post('ulangan/{siswa}','Nilai\UlanganController@store')->name('simpan-data.ulangan');
     route::post('nilai/raport/{siswa}','Nilai\RaportController@store')->name('simpan-data.nilai.raport');
@@ -136,7 +137,7 @@ Route::group(['prefix'=>'lihat'], function(){
  * route untuk siswa
  */
 Route::group(['prefix' => 'cek'], function(){
-    route::get('absensi', 'Siswa\AbsensiController@index')->name('cek.absensi');
+    route::get('absensi/{siswa}', 'AbsensisiswaController@index')->name('cek.absensi');
 });
 
 Route::group(['prefix' => 'cetak'], function(){

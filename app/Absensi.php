@@ -7,10 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Absensi extends Model
 {
     protected $table   = 'absensis';
-    protected $guarded = [];
+    protected $fillable = [
+        'siswa_id','guru_id','wala_id','absen'
+    ];
 
-    public function user()
+    public function siswa()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Siswa::class);
+    }
+    public function guru()
+    {
+        return $this->belongsTo(Guru::class);
     }
 }

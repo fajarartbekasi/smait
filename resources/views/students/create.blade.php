@@ -15,6 +15,11 @@
                             <h6>Silahkan masukan data siswa dibawah ini dengan benar dan lengkap terimakasih.</h6>
                         </div>
                     </div>
+                    @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success')}}
+                    </div>
+                    @endif
                     <div>
                         <form action="{{route('update.siswa', $user->id)}}" method="post">
                             @csrf
@@ -63,7 +68,7 @@
                                         <select name="kela_id" id="" class="form-control">
                                                 <option value="">Pilih Kelas</option>
                                             @foreach($kelas as $kela)
-                                                <option value="{{$kela->id}}"> {{$kela->nama}} </option>
+                                                <option value="{{$kela->id}}"> {{$kela->nama}} {{$kela->keahlian}} </option>
                                             @endforeach
                                         </select>
                                     </div>
