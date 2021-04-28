@@ -25,7 +25,7 @@
                                 @foreach($students as $student)
                                     <tr>
                                         <td>
-                                            {{$student->siswa->user->name}}
+                                            {{Auth::user()->name}}
                                         </td>
                                         <td>
                                             {{$student->created_at->toDateString()}}

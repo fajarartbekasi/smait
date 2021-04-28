@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Jadwal;
 use App\User;
 use App\Siswa;
+use App\Absensi;
 use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
@@ -13,8 +14,12 @@ class ScheduleController extends Controller
     {
        $jadwal = Jadwal::with('user','kela','mapel')->findOrFail($id);
 
-       $siswas = Siswa::with('kela')->where('kela_id', $jadwal->kela_id)->get();
+       $get = Siswa::where('kela_id', $id)->first();
 
-       return view('teachers.show', compact('jadwal', 'siswas'));
+        $kehadirans = Absensi::with('kela')->where('kela_id', $id)->get();
+
+       $siswas = Siswa::with('kela')->where('kela_id', $jadwal->kela_id)->paginate(5);
+
+       return view('teachers.show', compact('jadwal', 'siswas', 'kehadirans', 'get'));
     }
 }

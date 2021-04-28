@@ -21,5 +21,9 @@ class Kela extends Model
     {
         return $this->hasMany(Siswa::class);
     }
+    public function absensis()
+    {
+        return $this->hasMany(Absensi::class);
+    }
 
 }

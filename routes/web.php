@@ -137,9 +137,11 @@ Route::group(['prefix'=>'lihat'], function(){
  * route untuk siswa
  */
 Route::group(['prefix' => 'cek'], function(){
-    route::get('absensi/{siswa}', 'AbsensisiswaController@index')->name('cek.absensi');
+    route::get('absensi/{absensi}', 'AbsensisiswaController@index')->name('cek.absensi');
 });
 
 Route::group(['prefix' => 'cetak'], function(){
     route::get('raport/{raport}','Cetak\RaportController@show')->name('cetak.raport');
 });
+
+route::get('belajar', 'WelcomeController@index');

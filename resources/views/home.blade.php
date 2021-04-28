@@ -115,7 +115,7 @@
                                 <h3 class="">Jadwal Mengajar</h3>
                                 <h3 class="">
 
-                                        {{$jadwal->nama}}
+                                        {{$jadwal->nama}} {{$jadwal->keahlian}}
                                 </h3>
                                 <div class="table table-responsive pt-3">
                                     <table class="table table-striped">

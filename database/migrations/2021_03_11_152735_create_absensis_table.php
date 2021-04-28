@@ -17,6 +17,7 @@ class CreateAbsensisTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('siswa_id')->nullable();
             $table->unsignedInteger('guru_id')->nullable();
+            $table->unsignedInteger('kela_id')->nullable();
             $table->string('absen');
             $table->timestamps();
         });

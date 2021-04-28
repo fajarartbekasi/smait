@@ -18,12 +18,13 @@
                     @endif
                     <div class="form-group">
                         <label for="">Nama Siswa</label>
-                        <input type="text" name="" value="{{$siswa->name}}" id="" readonly class="form-control">
+                        <input type="text" name="" value="{{$siswa->user->name}}" id="" readonly class="form-control">
                     </div>
 
                     <form action="{{route('simpan-data.absensi-siswa')}}" method="post">
                         @csrf
-                        <input type="hidden" name="siswa_id" value="{{$siswa->id}}" id="" readonly class="form-control">
+                        <input type="hidden" name="siswa_id" value="{{$siswa->user->id}}" id="" readonly class="form-control">
+                        <input type="hidden" name="kela_id" value="{{$siswa->kela_id}}" id="" readonly class="form-control">
                         <div class="form-group">
                             <label for="">Keterangan</label>
                             <select name="absen" class="form-control" id="">

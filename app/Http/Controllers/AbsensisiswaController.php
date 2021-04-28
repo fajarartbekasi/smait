@@ -10,18 +10,16 @@ use Illuminate\Http\Request;
 
 class AbsensisiswaController extends Controller
 {
-    public function index()
+    public function index($id)
     {
 
-        $students = Absensi::with(['siswa.user' => function($user){
-                    $user->where('id', Auth::user()->id);
-                }])->paginate(5);
+        $students = Absensi::where('siswa_id', Auth::user()->id)->paginate(5);
 
         return view('students.absensi.siswa.index', compact('students'));
     }
     public function create($id)
     {
-        $siswa = User::findOrFail($id);
+        $siswa = Siswa::where('user_id',$id)->first();
 
         return view('absensi.siswa.create', compact('siswa'));
     }
@@ -29,11 +27,13 @@ class AbsensisiswaController extends Controller
     {
         $this->validate($request,[
             'siswa_id'     => 'required',
+            'kela_id'     => 'required',
             'absen'     => 'required',
         ]);
 
         $absen = Absensi::create([
             'siswa_id'   => $request->input('siswa_id'),
+            'kela_id'   => $request->input('kela_id'),
             'absen'      => $request->input('absen'),
         ]);
 

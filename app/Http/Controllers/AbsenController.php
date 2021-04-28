@@ -13,7 +13,7 @@ class AbsenController extends Controller
     public function index()
     {
 
-        $teachers = Absensi::with('guru.user')->whereNotNull('guru_id')->get();
+        $teachers = Absensi::with('guru.user')->has('guru.user')->get();
 
         return view('absensi.index', compact('teachers'));
     }
