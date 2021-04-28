@@ -112,9 +112,6 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a href="{{route('ambil-data.ulangan.siswa')}}" class="dropdown-item">
-                                       Nilai Ulangan
-                                    </a>
                                     <a href="{{route('ambil-data.raport.siswa')}}" class="dropdown-item">
                                        Nilai Raport
                                     </a>
