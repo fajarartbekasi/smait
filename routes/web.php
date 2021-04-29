@@ -83,12 +83,13 @@ Route::group(['[prefix' => 'ambil-form-edit'], function(){
     route::get('mapel/{mapel}', 'MapelController@edit')->name('ambil-form-edit.mapel');
     route::get('siswa/{user}','SiswaController@edit')->name('ambil-form-edit.siswa');
     route::get('guru/{user}','GuruController@edit')->name('ambil-form-edit.guru');
-    route::get('walas/{wala}','WalasController@edit')->name('ambil-form-edit.walas');
+    route::get('walas/{user}','WalasController@edit')->name('ambil-form-edit.walas');
     route::get('kelas/{kela}','KelasController@edit')->name('ambil-form-edit.kelas');
     route::get('jadwal/{jadwal}','JadwalController@edit')->name('ambil-form-edit.jadwal');
     route::get('user/{user}','InvitationController@edit')->name('ambil-form-edit.user');
     route::get('predikat/{predikat}','PredikatController@edit')->name('ambil-form-edit.predikat');
     route::get('absensi-siswa/{siswa}','AbsensisiswaController@create')->name('ambil-form-edit.absensi-siswa');
+
 });
 
 /**
@@ -99,7 +100,7 @@ Route::group(['prefix' => 'update'], function(){
     route::patch('mapel/{mapel}', 'MapelController@update')->name('update.mapel');
     route::patch('siswa/{siswa}', 'SiswaController@update')->name('update.siswa');
     route::patch('guru/{guru}', 'GuruController@update')->name('update.guru');
-    route::patch('walas/{user}', 'WalasController@update')->name('update.walas');
+    route::patch('walas/{guru}', 'WalasController@update')->name('update.walas');
     route::patch('jadwal/{jadwal}', 'JadwalController@update')->name('update.jadwal');
     route::patch('user/{user}', 'InvitationController@update')->name('update.user');
     route::patch('kelas/{kela}', 'KelasController@update')->name('update.kelas');
@@ -114,6 +115,7 @@ Route::group(['prefix'=>'destroy'], function(){
     route::delete('mapel/{mapel}','MapelController@destroy')->name('destroy.mapel');
     route::delete('siswa/{user}','SiswaController@destroy')->name('destroy.siswa');
     route::delete('guru/{user}','GuruController@destroy')->name('destroy.guru');
+    route::delete('walas/{user}','GuruController@destroy')->name('destroy.walas');
     route::delete('kelas/{kela}','KelasController@destroy')->name('destroy.kelas');
     route::delete('jadawl/{jadwal}','JadwalController@destroy')->name('destroy.jadwal');
 });

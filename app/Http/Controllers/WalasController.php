@@ -21,17 +21,42 @@ class WalasController extends Controller
     }
     public function edit($id)
     {
-        $user = Wala::find($id);
+        $user = User::findOrFail($id);
 
-        dd($user->user_id);
-        // return view('walas.edit', compact('user'));
+        return view('walas.edit', compact('user'));
     }
+
     public function update(Request $request, $id)
     {
-        $user = User::with('guru')->findOrFail($id);
+        $guru = Guru::where('user_id', $id)->first();
 
-        return redirect()->back()->with([
-            'success' => 'Walas berhasil di tambah'
+        $guru->nuptk = $request->input('nuptk');
+        $guru->agama = $request->input('agama');
+        $guru->jenis_kelamin = $request->input('jenis_kelamin');
+        $guru->tgl_lahir = $request->input('tgl_lahir');
+        $guru->tmp_lahir = $request->input('tmp_lahir');
+        $guru->alamat = $request->input('alamat');
+        $guru->telp = $request->input('telp');
+
+        $guru->save();
+
+        return redirect()->back()->with(['success'=>'Data guru berhasil di perbarui']);
+    }
+    public function destroy($id)
+    {
+        $user = User::findOrFail($id);
+
+        if($user->delete()){
+            $guru = Guru::where('user_id', $user->id)->first();
+
+            $guru->delete();
+        }elseif($guru->delete()) {
+            $walas = Wala::where('user_id', $user->id)->first();
+
+            $walas->delete();
+        }
+        return redirect('ambil-data/walas')->with([
+            'success' => 'Data berhasil dihapus'
         ]);
     }
 }

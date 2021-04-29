@@ -13,7 +13,27 @@
                         <h5 class="font-weight-bold">Perhatian!!!</h5>
                         <h5>ini adalah data absensi kehadiran guru</h5>
                     </div>
-
+                    <div class="mt-3 mb-3">
+                        <form action="" method="get">
+                            <div class="row">
+                                <div class="col-md-6">
+                                     <div class="form-group">
+                                        <label for="">Dari Tanggal</label>
+                                        <input type="date" name="tgl_awal" id="" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Dari akhir</label>
+                                        <input type="date" name="tgl_akhir" id="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <button type="submit" class="btn btn-info">Cari Absensi</button>
+                            </div>
+                        </form>
+                    </div>
                     <div class="table table-responsive">
                         <table class="table table-striped">
                             <thead>
