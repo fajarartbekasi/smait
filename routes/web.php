@@ -146,4 +146,13 @@ Route::group(['prefix' => 'cetak'], function(){
     route::get('raport/{raport}','Cetak\RaportController@show')->name('cetak.raport');
 });
 
+
+/**
+ * route laporan
+ */
+
+ Route::group(['prefix' => 'laporan'], function(){
+    route::get('absensi-guru','Absensi\LaporanController@show')->name('laporan.absensi-guru');
+ });
+
 route::get('belajar', 'WelcomeController@index');

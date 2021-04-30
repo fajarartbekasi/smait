@@ -14,7 +14,7 @@
                         <h5>ini adalah data absensi kehadiran guru</h5>
                     </div>
                     <div class="mt-3 mb-3">
-                        <form action="" method="get">
+                        <form action="{{route('laporan.absensi-guru')}}" method="get">
                             <div class="row">
                                 <div class="col-md-6">
                                      <div class="form-group">
