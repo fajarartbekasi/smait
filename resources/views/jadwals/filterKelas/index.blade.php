@@ -8,33 +8,31 @@
                     <div class="card-body">
 
                         <div class="py-3">
-                            <h5>Jadwal kelas : {{$kelas->nama}}</h5>
+                            <h5>Jadwal kelas ,</h5>
                         </div>
                         <div class="table table-responsive">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>Hari</th>
+                                        <th>Kelas</th>
                                         <th>Mapel</th>
-                                        <th>Jam Mulai</th>
-                                        <th>Jam Selesai</th>
+                                        <th>Jam</th>
                                         <th>Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($shows as $show)
+                                    @foreach($kelas as $getkelas)
                                         <tr>
-                                            <td>{{$show->nama}}</td>
-                                            @foreach($show->jadwals as $get)
-                                                <td>{{$get->hari}}</td>
-                                                <td>{{$get->jam_awal}}</td>
-                                                <td>{{$get->jam_akhir}}</td>
-                                            @endforeach
+                                            <td>{{$getkelas->hari}}</td>
+                                            <td>{{$getkelas->kela->nama}} {{$getkelas->kela->keahlian}}</td>
+                                            <td>{{$getkelas->mapel->nama}}</td>
+                                            <td>{{$getkelas->jam_awal}} - {{$getkelas->jam_akhir}}</td>
                                             <td>
-                                                <form action="{{route('destroy.jadwal', $show->id)}}" method="post">
+                                                <form action="{{route('destroy.jadwal', $getkelas->id)}}" method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{route('ambil-form-edit.jadwal', $show->id)}}" class="btn btn-sm btn-warning">Edit</a>
+                                                    <a href="{{route('ambil-form-edit.jadwal', $getkelas->id)}}" class="btn btn-sm btn-warning">Edit</a>
                                                     <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                                                 </form>
                                             </td>

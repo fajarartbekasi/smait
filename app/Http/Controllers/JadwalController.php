@@ -56,11 +56,10 @@ class JadwalController extends Controller
     }
     public function show($id)
     {
-        $kelas = Kela::where('id', $id)->firstOrFail();
 
-        $shows = Kela::with('jadwals')->orderBy('id', $id)->get();
+        $kelas = Jadwal::with('mapel','kela','user')->where('kela_id', $id)->get();
 
-       return view('jadwals.filterKelas.index', compact(['shows','kelas']));
+       return view('jadwals.filterKelas.index', compact(['kelas']));
     }
     public function store(Request $request)
     {

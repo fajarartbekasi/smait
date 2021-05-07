@@ -53,6 +53,8 @@
                                 @endforelse
                             </tbody>
                         </table>
+
+                        {{$walas->links()}}
                     </div>
                 </div>
             </div>

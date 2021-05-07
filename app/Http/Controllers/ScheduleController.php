@@ -12,14 +12,12 @@ class ScheduleController extends Controller
 {
     public function show($id)
     {
-       $jadwal = Jadwal::with('user','kela','mapel')->findOrFail($id);
-
-       $get = Siswa::where('kela_id', $id)->first();
+       $jadwal = Jadwal::with('user','kela','mapel')->where('mapel_id', $id)->firstOrFail();
 
         $kehadirans = Absensi::with('kela')->where('kela_id', $id)->get();
 
        $siswas = Siswa::with('kela')->where('kela_id', $jadwal->kela_id)->paginate(5);
 
-       return view('teachers.show', compact('jadwal', 'siswas', 'kehadirans', 'get'));
+       return view('teachers.show', compact('jadwal', 'siswas', 'kehadirans'));
     }
 }

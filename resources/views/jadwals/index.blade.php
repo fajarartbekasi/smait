@@ -20,7 +20,7 @@
                                 <tbody>
                                     @foreach($jadwals as $jadwal)
                                         <tr>
-                                            <td>{{$jadwal->kela->nama}}</td>
+                                            <td>{{$jadwal->kela->nama}} - {{$jadwal->kela->keahlian}}</td>
                                             <td>
                                                 <a href="{{route('lihat.jadwal', $jadwal->kela_id)}}" class="btn btn-sm btn-info">lihat jadwal</a>
                                             </td>

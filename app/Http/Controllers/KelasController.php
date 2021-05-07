@@ -15,7 +15,7 @@ class KelasController extends Controller
 {
     public function index()
     {
-        $walas = Kela::with('user')->get();
+        $walas = Kela::with('user')->paginate(5);
 
         return view('kelas.index', compact('walas'));
     }
